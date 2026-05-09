@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header.css">
+</head>
+<body>
+    <header class="header">
+    <div class="header_top-bar">
+        <div class="header_top-container">
+            <div class="header_contacts">
+                <a href="mailto:support@deepmag.ru" class="header_contact-link header_contact-link--email">
+                    <span class="header_contact-icon"><img src="/public/icons/e-mail.png" alt="email" class="header_icon-img"></span> support@deepmag.ru
+                </a>
+                <a href="tel:+79191234556" class="header_contact-link header_contact-link--phone">
+                    <span class="header_contact-icon"><img src="/public/icons/phone.png" alt="phone" class="header_icon-img"></span> +7 (919)-123-45-56
+                </a>
+                <a href="https://wa.me/79191234556" class="header_contact-link header_contact-link--whatsapp" target="_blank">
+                    <span class="header_contact-icon"><img src="/public/icons/whatsapp.png" alt="whatsapp" class="header_icon-img"></span> Напишите нам в WhatsApp
+                </a>
+            </div>
+            <div class="header_info">
+                <span class="header_info-text">
+                    <span class="header_info-icon"><img src="/public/icons/mask.png" alt="delivery" class="header_icon-img"></span> Бесконтактная доставка
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="header_main">
+        <div class="header_main-container">
+            <a href="/" class="header_logo">
+                <img src="/public/logos/logo.png" alt="DEEPMAG">
+            </a>
+
+            <form class="header_search-form" action="/search" method="GET">
+                <div class="header_search-wrapper">
+                    <span class="header_search-icon"><img src="/public/icons/magnifier.png" alt="search" class="header_search-icon-img"></span>
+                    <input type="text" name="q" class="header_search-input" placeholder="Поиск">
+                </div>
+            </form>
+
+            <div class="header_settings">
+                <button class="header_settings-btn">
+                    <img src="/public/icons/half-moon_183778.png" alt="theme-mode" class="header_settings-icon">
+                </button>
+                <button class="header_settings-btn">
+                    <img src="/public/icons/visible_5340135.png" alt="accessibility" class="header_settings-icon">
+                </button>
+            </div>
+
+            <div class="header_user-panel">
+                <a href="/login" class="header_user-action header_user-action--login">
+                    <span class="header_user-text">Вход/регистрация</span>
+                    <span class="header_user-icon"><img src="/public/icons/login.png" alt="login" class="header_user-icon-img"></span>
+                </a>
+                <a href="/favorites" class="header_user-action header_user-action--favorites">
+                    <span class="header_user-icon"><img src="/public/icons/fav.png" alt="favorites" class="header_user-icon-img"></span>
+                    <span class="header_badge">0</span>
+                </a>
+                <a href="/cart" class="header_user-action header_user-action--cart">
+                    <span class="header_user-icon"><img src="/public/icons/cart.png" alt="cart" class="header_user-icon-img"></span>
+                    <span class="header_badge">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>

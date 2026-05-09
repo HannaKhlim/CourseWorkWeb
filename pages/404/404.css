@@ -1,0 +1,49 @@
+.not-found_img {
+  position: absolute;
+  left: 50%;
+  height: 100vh;
+  max-width: 50%;
+  top: 0;
+}
+
+.not-found_body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.not-found_body_title {
+  color: #000;
+  text-align: center;
+  font-family: Futura;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.not-found_body_undertitle {
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.not-found_body_btn {
+  height: 39px;
+  background: #525252;
+  color: #fff;
+  text-align: center;
+
+  font-family: Futura;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}

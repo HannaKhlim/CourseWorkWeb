@@ -1,0 +1,166 @@
+/* Переменные для удобства управления цветами */
+:root {
+  --black: #000000;
+  --gray-bg: #f5f5f5;
+  --light-gray: #e0e0e0;
+  --text-color: #333333;
+  --white: #ffffff;
+  --accent: #d90000; /* Цвет для бейджей, если нужно */
+}
+
+/* Сброс базовых отступов */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Arial", sans-serif;
+}
+
+/* Контейнер для центрирования контента */
+.header_top-container,
+.header_main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- ВЕРХНЯЯ ПОЛОСА (BLACK) --- */
+.header_top-bar {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.header_top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_contacts {
+  display: flex;
+  gap: 25px;
+}
+
+.header_contact-link {
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Базовый стиль для иконок */
+.header_icon-img {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- ОСНОВНАЯ ЧАСТЬ ХЕДЕРА --- */
+.header_main {
+  background-color: var(--gray-bg);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.header_main-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Логотип */
+.header_logo {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Поиск */
+.header_search-form {
+  flex-grow: 1;
+}
+.header_search-wrapper {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 25px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+}
+.header_search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 10px;
+  background: transparent;
+}
+
+/* Настройки и иконки */
+.header_settings,
+.header_user-panel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header_settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header_user-action {
+  text-decoration: none;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+/* Бейджи (цифры 0) */
+.header_badge {
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 992px) {
+  .header_contacts {
+    gap: 10px;
+    font-size: 10px;
+  }
+  .header_main-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header_search-form {
+    order: 3;
+    width: 100%;
+  } /* Поиск переносится вниз */
+}
+
+@media (max-width: 600px) {
+  .header_top-bar {
+    display: none;
+  } /* Скрываем верхнюю полосу на мобилках */
+  .header_user-text {
+    display: none;
+  } /* Скрываем текст входа на мобилках */
+}
