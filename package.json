@@ -1,10 +1,11 @@
 {
   "scripts": {
-    "start": "concurrently \"live-server --port=5000\" \"json-server --watch db.json --port=3001\""
+    "start": "concurrently \"sass --watch style.scss:style.css\" \"live-server --port=5000\" \"json-server db.json --port=3001\""
   },
   "dependencies": {
     "concurrently": "^9.2.1",
     "json-server": "^1.0.0-beta.15",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "sass": "^1.99.0"
   }
 }
