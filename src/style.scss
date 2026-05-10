@@ -8,6 +8,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Montserrat;
+  font-size: 16px;
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0;
@@ -27,11 +28,17 @@
     letter-spacing: 5%;
 
     &__item {
-      gap: 10px;
+      display: flex;
+      gap: 7px;
       cursor: pointer;
+      font-size: 13px;
 
       &:last-child {
         cursor: initial;
+      }
+
+      span {
+        font: inherit;
       }
     }
 
@@ -102,6 +109,8 @@
 
     &__item {
       cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
     }
 
     &__icon {
@@ -136,6 +145,46 @@
         font-size: 18px;
       }
     }
+  }
+}
+
+.footer {
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 46px 80px;
+    background-color: #f0f0f0;
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &__title {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      &__item {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #d3d3d3;
+    padding: 0 80px;
   }
 }
 
