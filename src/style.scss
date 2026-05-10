@@ -3,6 +3,8 @@
   --secondary-bg-color: #333;
 }
 
+$mobile-max-width: 1080px;
+
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +25,15 @@
     background-color: black;
     color: white;
     width: 100%;
-    height: 30px;
+    height: 40px;
     font-size: 13px;
     letter-spacing: 5%;
+    gap: 32px;
+    padding: 0 32px;
+
+    @media (max-width: $mobile-max-width) {
+      justify-content: start;
+    }
 
     &__item {
       display: flex;
@@ -34,44 +42,56 @@
       font-size: 13px;
 
       &:last-child {
-        cursor: initial;
+        @media (max-width: $mobile-max-width) {
+          width: stretch;
+          justify-content: end;
+        }
       }
 
       span {
         font: inherit;
+
+        @media (max-width: $mobile-max-width) {
+          display: none;
+        }
+      }
+
+      &--cta {
+        @media (max-width: $mobile-max-width) {
+          display: none;
+        }
       }
     }
 
     &__icon {
       height: 16px;
     }
-
-    &__cta {
-      background: none;
-      color: inherit;
-      border: none;
-      padding: 0;
-      font: inherit;
-      cursor: pointer;
-      outline: inherit;
-    }
   }
 
   &-bottom {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 70px;
     background-color: #f0f0f0;
     letter-spacing: 5%;
+    padding: 0 80px;
+    gap: 10%;
+
+    @media (max-width: $mobile-max-width) {
+      height: 60px;
+      padding: 0 32px;
+      gap: 32px;
+    }
 
     &__item {
       width: 100%;
-      padding: 0 50px;
     }
 
     &__logo {
-      height: 25px;
-      width: 372px;
+      width: 100%;
+      max-width: 372px;
+      min-width: 140px;
+      height: auto;
       cursor: pointer;
     }
   }
@@ -88,6 +108,10 @@
 
     &__wrapper {
       position: relative;
+
+      @media (max-width: $mobile-max-width) {
+        display: none;
+      }
 
       &::before {
         position: absolute;
@@ -109,12 +133,14 @@
 
     &__item {
       cursor: pointer;
-      font-size: 12px;
-      font-weight: 500;
     }
 
     &__icon {
       height: 30px;
+
+      @media (max-width: $mobile-max-width) {
+        height: 16px;
+      }
     }
   }
 
@@ -150,10 +176,15 @@
 
 .footer {
   &-top {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     padding: 46px 80px;
     background-color: #f0f0f0;
+
+    @media (max-width: $mobile-max-width) {
+      padding: 32px;
+    }
   }
 
   &-column {
@@ -180,11 +211,16 @@
 
   &-bottom {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    min-height: 70px;
     background-color: #d3d3d3;
     padding: 0 80px;
+
+    @media (max-width: $mobile-max-width) {
+      padding: 8px 32px;
+    }
   }
 }
 
