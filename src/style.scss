@@ -10,7 +10,7 @@
   font-family: Montserrat;
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: 5%;
+  letter-spacing: 0;
   vertical-align: middle;
 }
 
@@ -24,6 +24,7 @@
     width: 100%;
     height: 30px;
     font-size: 13px;
+    letter-spacing: 5%;
 
     &__item {
       gap: 10px;
@@ -54,6 +55,7 @@
     align-items: center;
     height: 100px;
     background-color: #f0f0f0;
+    letter-spacing: 5%;
 
     &__item {
       width: 100%;
@@ -63,6 +65,7 @@
     &__logo {
       height: 25px;
       width: 372px;
+      cursor: pointer;
     }
   }
 
@@ -104,5 +107,90 @@
     &__icon {
       height: 30px;
     }
+  }
+
+  &-navigation {
+    display: flex;
+    align-items: center;
+    height: 130px;
+
+    &__item {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      padding: 0 50px;
+    }
+
+    &__option {
+      display: none;
+
+      &:checked + &-label {
+        font-weight: 500;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 3px;
+      }
+
+      &-label {
+        font-family: Roboto;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.not-found {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+
+  &__title {
+    color: #000;
+    text-align: center;
+    font-family: Futura;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__subtitle {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__cta {
+    height: 39px;
+    background: #525252;
+    color: #fff;
+    text-align: center;
+    font-family: Futura;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+  }
+
+  &:hover {
+    background: #333;
+    transition: background 0.3s ease;
+  }
+
+  &__illustration {
+    position: absolute;
+    left: 50%;
+    height: 100vh;
+    max-width: 50%;
+    top: 0;
   }
 }

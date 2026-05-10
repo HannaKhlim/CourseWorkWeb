@@ -1,43 +1,55 @@
 <header class="header">
   <div class="header-top">
-      <div class="header-top__item">
-        <img
-          src="/public/icons/e-mail.png"
-          alt="Email"
-          class="header-top__icon"
-        />
-        <span>support@deepmag.ru</span>
-      </div>
-      <div class="header-top__item">
-        <img
-          src="/public/icons/phone.png"
-          alt="Phone"
-          class="header-top__icon"
-        />
-        <span>+7 (919)-123-456-56</span>
-      </div>
-      <div class="header-top__item">
-        <img
-          src="/public/icons/whatsapp.png"
-          alt="WhatsApp"
-          class="header-top__icon"
-        />
-        <span>Напишите нам в WhatsApp</span>
-      </div>
-      <div class="header-top__item">
-        <img src="/public/icons/sparkles.svg" alt="Change Theme" class="header-top__icon" />
-        <button class="header-top__cta">Сменить тему</button>
-      </div>
-      <div class="header-top__item">
-        <img src="/public/icons/vision.png" alt="Vision Support" class="header-top__icon" />
-        <button class="header-top__cta">Слабовидящим</button>
-      </div>
-      <div class="header-top__item">
-        <img src="/public/icons/translation.png" alt="Change Language" class="header-top__icon" />
-        <button class="header-top__cta">Сменить язык</button>
-      </div>
     <div class="header-top__item">
-      <img src="/public/icons/mask.png" alt="Delivery" class="header-top__icon" />
+      <img
+        src="/public/icons/e-mail.png"
+        alt="Email"
+        class="header-top__icon"
+      />
+      <span>support@deepmag.ru</span>
+    </div>
+    <div class="header-top__item">
+      <img src="/public/icons/phone.png" alt="Phone" class="header-top__icon" />
+      <span>+7 (919)-123-456-56</span>
+    </div>
+    <div class="header-top__item">
+      <img
+        src="/public/icons/whatsapp.png"
+        alt="WhatsApp"
+        class="header-top__icon"
+      />
+      <span>Напишите нам в WhatsApp</span>
+    </div>
+    <div class="header-top__item">
+      <img
+        src="/public/icons/sparkles.svg"
+        alt="Change Theme"
+        class="header-top__icon"
+      />
+      <button class="header-top__cta">Сменить тему</button>
+    </div>
+    <div class="header-top__item">
+      <img
+        src="/public/icons/vision.png"
+        alt="Vision Support"
+        class="header-top__icon"
+      />
+      <button class="header-top__cta">Слабовидящим</button>
+    </div>
+    <div class="header-top__item">
+      <img
+        src="/public/icons/translation.png"
+        alt="Change Language"
+        class="header-top__icon"
+      />
+      <button class="header-top__cta">Сменить язык</button>
+    </div>
+    <div class="header-top__item">
+      <img
+        src="/public/icons/mask.png"
+        alt="Delivery"
+        class="header-top__icon"
+      />
       <span>Бесконтактная доставка</span>
     </div>
   </div>
@@ -47,6 +59,10 @@
         src="/public/logos/logo.png"
         alt="DEEPMAG"
         class="header-bottom__logo"
+        onclick="
+          window.history.pushState(null, '', '/');
+          window.dispatchEvent(new Event('popstate'));
+        "
       />
     </div>
     <div class="header-bottom__item header-search__wrapper">
@@ -55,14 +71,90 @@
     <div class="header-bottom__item header-profile">
       <div class="header-profile__item">
         <span>Вход/регистрация</span>
-        <img src="/public/icons/enter.svg" alt="Login" class="header-profile__icon" />
+        <img
+          src="/public/icons/enter.svg"
+          alt="Login"
+          class="header-profile__icon"
+        />
       </div>
       <div class="header-profile__item">
-        <img src="/public/icons/heart.png" alt="Favorites" class="header-profile__icon" />
+        <img
+          src="/public/icons/heart.png"
+          alt="Favorites"
+          class="header-profile__icon"
+        />
       </div>
       <div class="header-profile__item">
-        <img src="/public/icons/cart.svg" alt="Cart" class="header-profile__icon" />
+        <img
+          src="/public/icons/cart.svg"
+          alt="Cart"
+          class="header-profile__icon"
+        />
       </div>
     </div>
   </div>
+  <nav class="header-navigation">
+    <form id="gender-selection" class="header-navigation__item">
+      <input
+        class="header-navigation__option"
+        type="radio"
+        id="female"
+        value="female"
+      />
+      <label for="female" class="header-navigation__option-label"
+        >ЖЕНЩИНЫ</label
+      >
+      <input
+        class="header-navigation__option"
+        type="radio"
+        id="male"
+        value="male"
+      />
+      <label for="male" class="header-navigation__option-label">МУЖЧИНЫ</label>
+      <input
+        class="header-navigation__option"
+        type="radio"
+        id="kids"
+        value="kids"
+      />
+      <label for="kids" class="header-navigation__option-label">ДЕТИ</label>
+    </form>
+    <form id="category-selection" class="header-navigation__item">
+      <input
+        class="header-navigation__option"
+        type="radio"
+        id="clothes"
+        value="clothes"
+      />
+      <label for="clothes" class="header-navigation__option-label"
+        >Одежда</label
+      >
+      <input
+        class="header-navigation__option"
+        type="radio"
+        id="shoes"
+        value="shoes"
+      />
+      <label for="shoes" class="header-navigation__option-label">Обувь</label>
+      <input
+        class="header-navigation__option"
+        type="radio"
+        id="accessories"
+        value="accessories"
+      />
+      <label for="accessories" class="header-navigation__option-label"
+        >Сумки и аксессуары</label
+      >
+      <input
+        class="header-navigation__option"
+        type="radio"
+        id="underwear"
+        value="underwear"
+      />
+      <label for="underwear" class="header-navigation__option-label"
+        >Нижнее бельё</label
+      >
+    </form>
+    <div class="header-navigation__item" />
+  </nav>
 </header>

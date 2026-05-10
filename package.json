@@ -1,11 +1,20 @@
 {
+  "type": "module",
   "scripts": {
-    "start": "concurrently \"sass --watch style.scss:style.css\" \"live-server --port=5000\" \"json-server db.json --port=3001\""
+    "dev": "concurrently \"sass --watch src/style.scss:src/style.css\" \"nodemon server.js\" \"json-server db.json --port=3001\"",
+    "start": "concurrently \"sass src/style.scss:src/style.css\" \"node server.js\" \"json-server db.json --port=3001\"",
+    "format": "prettier . --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "concurrently": "^9.2.1",
+    "express": "^4.18.2",
     "json-server": "^1.0.0-beta.15",
-    "live-server": "^1.2.2",
     "sass": "^1.99.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.3"
   }
 }
