@@ -189,57 +189,42 @@
 }
 
 .not-found {
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 50%;
+  align-items: center;
+  padding: 0 80px;
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
   &__title {
-    color: #000;
-    text-align: center;
-    font-family: Futura;
     font-size: 64px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
   }
 
   &__subtitle {
-    color: #000;
-    text-align: center;
-    font-family: Montserrat;
     font-size: 36px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
   }
 
   &__cta {
-    height: 39px;
-    background: #525252;
-    color: #fff;
-    text-align: center;
-    font-family: Futura;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    cursor: pointer;
     border: none;
-  }
+    width: fit-content;
+    padding: 8px 32px;
+    background-color: #525252;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
 
-  &:hover {
-    background: #333;
-    transition: background 0.3s ease;
+    &:hover {
+      background: #333;
+      transition: background 0.3s ease;
+    }
   }
 
   &__illustration {
-    position: absolute;
-    left: 50%;
-    height: 100vh;
-    max-width: 50%;
-    top: 0;
+    width: 30%;
   }
 }

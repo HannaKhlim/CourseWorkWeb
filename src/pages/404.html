@@ -1,10 +1,18 @@
 <div class="not-found">
-  <h2 class="not-found__title">Упс... Страница не найдена :/</h2>
-  <h3 class="not-found__subtitle">
-    Мы уже работаем над исправлением этой ошибки
-  </h3>
-  <button class="not-found__cta" onclick="window.location.href = '/'">
-    вернуться на главную
-  </button>
+  <div class="not-found__message">
+    <h1 class="not-found__title">Упс... Страница не найдена :/</h1>
+    <h2 class="not-found__subtitle">
+      Мы уже работаем над исправлением этой ошибки
+    </h2>
+    <button
+      class="not-found__cta"
+      onclick="
+        window.history.pushState(null, '', '/');
+        window.dispatchEvent(new Event('popstate'));
+      "
+    >
+      ВЕРНУТЬСЯ НА ГЛАВНУЮ
+    </button>
+  </div>
   <img class="not-found__illustration" src="/public/photos/404.png" alt="404" />
 </div>
