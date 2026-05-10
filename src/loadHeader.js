@@ -22,9 +22,7 @@ const initializeHeaderHandlers = () => {
     if (selectedGender && selectedCategory) {
       localStorage.setItem("selectedGender", selectedGender.value);
       localStorage.setItem("selectedCategory", selectedCategory.value);
-
-      window.history.pushState(null, "", "/products");
-      window.dispatchEvent(new Event("popstate"));
+      navigateTo("/products");
     }
   };
 
@@ -47,7 +45,7 @@ const initializeDefaultSelections = () => {
   if (categoryRadio) categoryRadio.checked = true;
 };
 
-fetch("src/components/header.html?v=" + new Date().getTime())
+fetch("src/components/header.html")
   .then((response) => response.text())
   .then((html) => {
     const headerContainer = document.getElementById("header-container");

@@ -35,15 +35,17 @@ const route = async () => {
   mainContent.innerHTML = content;
 };
 
-document.addEventListener("click", (e) => {
-  const link = e.target.closest("a[data-link]");
-  if (!link) return;
-
-  e.preventDefault();
-  const href = link.getAttribute("href");
-  history.pushState(null, "", href);
-  route();
-});
-
 window.addEventListener("popstate", route);
 window.addEventListener("DOMContentLoaded", route);
+window.navigateTo = (route) => {
+  window.history.pushState(null, "", route);
+  window.dispatchEvent(new Event("popstate"));
+};
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[data-link]");
+  if (!link) return;
+
+  event.preventDefault();
+  const href = link.getAttribute("href");
+  navigateTo(href);
+});

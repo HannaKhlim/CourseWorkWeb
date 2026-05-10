@@ -4,13 +4,7 @@
     <h2 class="not-found__subtitle">
       Мы уже работаем над исправлением этой ошибки
     </h2>
-    <button
-      class="not-found__cta"
-      onclick="
-        window.history.pushState(null, '', '/');
-        window.dispatchEvent(new Event('popstate'));
-      "
-    >
+    <button class="not-found__cta" onclick="navigateTo('/')">
       ВЕРНУТЬСЯ НА ГЛАВНУЮ
     </button>
   </div>

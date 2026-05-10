@@ -1,4 +1,4 @@
-fetch("src/components/footer.html?v=" + new Date().getTime())
+fetch("src/components/footer.html")
   .then((response) => response.text())
   .then((html) => {
     const footerContainer = document.getElementById("footer-container");
