@@ -1,12 +1,20 @@
 <div class="not-found">
   <div class="not-found__message">
-    <h1 class="not-found__title">Упс... Страница не найдена :/</h1>
-    <h2 class="not-found__subtitle">
-      Мы уже работаем над исправлением этой ошибки
-    </h2>
-    <button class="not-found__cta" onclick="navigateTo('/')">
-      ВЕРНУТЬСЯ НА ГЛАВНУЮ
-    </button>
+    <div class="not-found__text-block">
+      <h1 class="not-found__title">Упс... Страница не найдена :/</h1>
+      <h2 class="not-found__subtitle">
+        Мы уже работаем над исправлением этой ошибки
+      </h2>
+    </div>
+    <div class="not-found__illustration-wrapper">
+      <img
+        class="not-found__illustration"
+        src="/public/photos/404.png"
+        alt="404"
+      />
+    </div>
   </div>
-  <img class="not-found__illustration" src="/public/photos/404.png" alt="404" />
+  <button class="btn-primary" onclick="navigateTo('/')">
+    ВЕРНУТЬСЯ НА ГЛАВНУЮ
+  </button>
 </div>

@@ -25,6 +25,28 @@ body {
   margin: 0 auto;
 }
 
+%btn-common {
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  @extend %btn-common;
+  background-color: #525252;
+  color: #fff;
+}
+
+.btn-secondary {
+  @extend %btn-common;
+  color: #525252;
+  background-color: #fff;
+  border: 3px solid #525252;
+}
+
 .header {
   &-top {
     display: flex;
@@ -81,14 +103,33 @@ body {
     align-items: center;
     height: 70px;
     background-color: #f0f0f0;
-    letter-spacing: 5%;
     padding: 0 80px;
     gap: 10%;
 
+    &-mobile {
+      display: none;
+
+      @media (max-width: $mobile-max-width) {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 0 32px;
+        gap: 16px;
+        background-color: #f0f0f0;
+      }
+
+      &__menu {
+        display: flex;
+        gap: 12px;
+      }
+
+      &__icon {
+        height: 16px;
+      }
+    }
+
     @media (max-width: $mobile-max-width) {
-      height: 60px;
-      padding: 0 32px;
-      gap: 32px;
+      display: none;
     }
 
     &__item {
@@ -242,50 +283,75 @@ body {
     min-height: 70px;
     background-color: #d3d3d3;
     padding: 0 80px;
+    gap: 8px;
 
     @media (max-width: $mobile-max-width) {
       padding: 8px 32px;
+    }
+
+    &__item {
+      font-size: 14px;
+
+      @media (max-width: $mobile-max-width) {
+        font-size: 9px;
+      }
     }
   }
 }
 
 .not-found {
   display: flex;
-  align-items: center;
-  padding: 0 80px;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 80px;
+
+  @media (max-width: $mobile-max-width) {
+    padding: 20px 32px;
+  }
 
   &__message {
     display: flex;
+    align-items: stretch;
+  }
+
+  &__text-block {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
   }
 
   &__title {
     font-size: 64px;
     font-weight: 700;
+
+    @media (max-width: $mobile-max-width) {
+      font-size: 17px;
+    }
   }
 
   &__subtitle {
     font-size: 36px;
     font-weight: 700;
-  }
 
-  &__cta {
-    border: none;
-    width: fit-content;
-    padding: 8px 32px;
-    background-color: #525252;
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-
-    &:hover {
-      background: #333;
-      transition: background 0.3s ease;
+    @media (max-width: $mobile-max-width) {
+      font-size: 14px;
     }
   }
 
   &__illustration {
-    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    &-wrapper {
+      position: relative;
+      flex: 1;
+      min-height: 150px;
+      min-width: 30%;
+    }
   }
 }
