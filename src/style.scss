@@ -314,7 +314,6 @@ main {
 
   &__message {
     display: flex;
-    align-items: stretch;
   }
 
   &__text-block {
@@ -353,8 +352,13 @@ main {
     &-wrapper {
       position: relative;
       flex: 1;
-      min-height: 150px;
-      min-width: 30%;
+      min-width: 350px;
+      min-height: 350px;
+
+      @media (max-width: $mobile-max-width) {
+        min-width: 80px;
+        min-height: 20vw;
+      }
     }
   }
 }
