@@ -45,14 +45,24 @@ const initializeDefaultSelections = () => {
   if (categoryRadio) categoryRadio.checked = true;
 };
 
+const initHeader = () => {
+  initializeHeaderHandlers();
+  initializeDefaultSelections();
+  document
+    .getElementById("lang-toggle")
+    .addEventListener("click", toggleLanguage);
+};
+
 fetch("src/components/header.html")
   .then((response) => response.text())
   .then((html) => {
     const headerContainer = document.getElementById("header-container");
     if (headerContainer) {
-      headerContainer.innerHTML = html;
-      initializeHeaderHandlers();
-      initializeDefaultSelections();
+      registerTemplate("header-container", html);
+      headerContainer.innerHTML = translate(html);
+      initHeader();
     }
   })
   .catch((error) => console.error("Error loading header:", error));
+
+document.addEventListener("i18n:applied", initHeader);

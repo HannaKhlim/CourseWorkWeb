@@ -1,10 +1,8 @@
 <div class="not-found">
   <div class="not-found__message">
     <div class="not-found__text-block">
-      <h1 class="not-found__title">Упс... Страница не найдена :/</h1>
-      <h2 class="not-found__subtitle">
-        Мы уже работаем над исправлением этой ошибки
-      </h2>
+      <h1 class="not-found__title">{{notFound.title}}</h1>
+      <h2 class="not-found__subtitle">{{notFound.message}}</h2>
     </div>
     <div class="not-found__illustration-wrapper">
       <img
@@ -15,6 +13,6 @@
     </div>
   </div>
   <button class="btn-primary" onclick="navigateTo('/')">
-    ВЕРНУТЬСЯ НА ГЛАВНУЮ
+    {{notFound.cta}}
   </button>
 </div>

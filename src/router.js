@@ -32,7 +32,8 @@ const route = async () => {
     content = await renderNotFound();
   }
 
-  mainContent.innerHTML = content;
+  registerTemplate("main-content", content);
+  mainContent.innerHTML = translate(content);
 };
 
 window.addEventListener("popstate", route);

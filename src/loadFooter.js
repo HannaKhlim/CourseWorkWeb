@@ -3,7 +3,8 @@ fetch("src/components/footer.html")
   .then((html) => {
     const footerContainer = document.getElementById("footer-container");
     if (footerContainer) {
-      footerContainer.innerHTML = html;
+      registerTemplate("footer-container", html);
+      footerContainer.innerHTML = translate(html);
     }
   })
   .catch((error) => console.error("Error loading footer:", error));
