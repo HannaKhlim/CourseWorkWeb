@@ -17,7 +17,13 @@ const renderNotFound = async () => {
 
 const route = async () => {
   const path = window.location.pathname;
-  const pageFile = pages[path];
+  let pageFile = pages[path];
+  let productId = null;
+
+  if (!pageFile && path.startsWith("/product/")) {
+    pageFile = "src/pages/product.html";
+    productId = path.slice("/product/".length);
+  }
 
   let content;
   if (pageFile) {
@@ -34,6 +40,12 @@ const route = async () => {
 
   registerTemplate("main-content", content);
   mainContent.innerHTML = translate(content);
+
+  if (path === "/products") {
+    initProductsPage();
+  } else if (productId !== null) {
+    initProductPage(productId);
+  }
 };
 
 window.addEventListener("popstate", route);
