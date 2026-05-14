@@ -1,16 +1,18 @@
+const getRadios = (form) => form.querySelectorAll('input[type="radio"]');
+
+const clearRadioSelection = (form) => {
+  getRadios(form).forEach((radio) => (radio.checked = false));
+};
+
 const initializeHeaderHandlers = () => {
   const handleRadioSelect = (event) => {
     const formGender = document.querySelector("#gender-selection");
     const formCategory = document.querySelector("#category-selection");
 
-    const getRadios = (form) => form.querySelectorAll('input[type="radio"]');
-
     const clickedRadio = event.target;
     const parentForm = clickedRadio.closest("form");
-
-    getRadios(parentForm).forEach((radio) => {
-      if (radio !== clickedRadio) radio.checked = false;
-    });
+    clearRadioSelection(parentForm);
+    clickedRadio.checked = true;
 
     const selectedGender = formGender.querySelector(
       'input[type="radio"]:checked',
@@ -27,12 +29,14 @@ const initializeHeaderHandlers = () => {
   };
 
   document.querySelectorAll(".header-navigation__option").forEach((input) => {
-    input.addEventListener("change", handleRadioSelect);
+    input.addEventListener("click", handleRadioSelect);
   });
 };
 
 const initializeDefaultSelections = () => {
-  const defaultGender = localStorage.getItem("selectedGender") || "female";
+  clearRadioSelection(document.querySelector("#gender-selection"));
+  clearRadioSelection(document.querySelector("#category-selection"));
+  const defaultGender = localStorage.getItem("selectedGender") || "women";
   const defaultCategory = localStorage.getItem("selectedCategory");
 
   const genderRadio = document.querySelector(
@@ -53,7 +57,7 @@ const initHeader = () => {
     .addEventListener("click", toggleLanguage);
 };
 
-fetch("src/components/header.html")
+fetch("/src/components/header.html")
   .then((response) => response.text())
   .then((html) => {
     const headerContainer = document.getElementById("header-container");
@@ -66,3 +70,4 @@ fetch("src/components/header.html")
   .catch((error) => console.error("Error loading header:", error));
 
 document.addEventListener("i18n:applied", initHeader);
+document.addEventListener("localstorage:updated", initHeader);

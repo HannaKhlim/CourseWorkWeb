@@ -239,6 +239,7 @@ main {
         font-family: Roboto;
         font-size: 18px;
         align-self: center;
+        cursor: pointer;
 
         @media (max-width: $mobile-max-width) {
           font-size: 14px;
@@ -363,8 +364,6 @@ main {
   }
 }
 
-// ─── Product Grid ─────────────────────────────────────────────────────────────
-
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -375,8 +374,6 @@ main {
     gap: 12px;
   }
 }
-
-// ─── Product Tile (overlay card) ──────────────────────────────────────────────
 
 .product-tile {
   position: relative;
@@ -404,11 +401,6 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     gap: 8px;
-    transition: min-height 0.35s ease;
-  }
-
-  &:hover &__overlay {
-    min-height: 55%;
   }
 
   &__main {
@@ -442,7 +434,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: max-height 0.35s ease, opacity 0.3s ease;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.3s ease;
   }
 
   &:hover &__extra {
@@ -458,20 +452,12 @@ main {
 
   &__btn {
     width: 100%;
-    padding: 10px;
     font-size: 14px;
     font-weight: 600;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    cursor: pointer;
-    text-align: center;
   }
 }
 
-// ─── Product Detail Page ──────────────────────────────────────────────────────
-
-.product-detail {
+.product-details {
   display: flex;
   gap: 60px;
   padding: 20px 0;
@@ -546,5 +532,48 @@ main {
   &__loading {
     color: #777;
     font-size: 16px;
+  }
+}
+
+.hero-banner {
+  width: calc(100% + 160px);
+  margin: 0 -80px;
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.genders {
+  display: flex;
+  padding: 50px 0;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media (max-width: $mobile-max-width) {
+    display: none;
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__label {
+    writing-mode: sideways-lr;
+    color: #525252;
+    font-size: 32px;
+    font-weight: 700;
+    flex-shrink: 0;
   }
 }

@@ -5,8 +5,8 @@
       "name": "Юбка миди",
       "brand": "LOVE REPUBLIC",
       "price": 3400,
-      "category": "Верхняя одежда",
-      "image": "./public/photos/skirt.jpg",
+      "category": "outerwear",
+      "image": "/public/photos/skirt.png",
       "description": "Стильная юбка миди из качественной ткани",
       "inStock": true
     },

@@ -67,6 +67,14 @@ const translations = {
       message: "Страница, которую вы ищете, не существует.",
       cta: "ВЕРНУТЬСЯ НА ГЛАВНУЮ",
     },
+    home: {
+      women: "ЖЕНЩИНЫ",
+      men: "МУЖЧИНЫ",
+      kids: "ДЕТИ",
+    },
+    productCard: {
+      selectSize: "Выбрать размер",
+    },
   },
   en: {
     header: {
@@ -136,6 +144,14 @@ const translations = {
       message: "The page you are looking for does not exist.",
       cta: "BACK TO HOME",
     },
+    home: {
+      women: "WOMEN",
+      men: "MEN",
+      kids: "KIDS",
+    },
+    productCard: {
+      selectSize: "Select Size",
+    },
   },
 };
 
@@ -168,7 +184,10 @@ const registerTemplate = (id, html) => templates.set(id, html);
 const applyTranslations = () => {
   templates.forEach((html, id) => {
     const el = document.getElementById(id);
-    if (el) el.innerHTML = translate(html);
+    if (el)
+      el.replaceChildren(
+        document.createRange().createContextualFragment(translate(html)),
+      );
   });
   document.dispatchEvent(new Event("i18n:applied"));
 };

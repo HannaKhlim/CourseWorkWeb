@@ -1,4 +1,4 @@
-window.initProductsPage = async function () {
+window.initProductsPage = async () => {
   const grid = document.getElementById("products-grid");
   if (!grid) return;
 
@@ -9,6 +9,5 @@ window.initProductsPage = async function () {
     grid.innerHTML = products.map(createProductCard).join("");
   } catch (error) {
     console.error("Error loading products:", error);
-    grid.innerHTML = "<p>Не удалось загрузить товары.</p>";
   }
 };

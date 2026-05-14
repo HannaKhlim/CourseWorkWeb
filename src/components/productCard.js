@@ -1,7 +1,7 @@
-window.createProductCard = function (product) {
+window.createProductCard = (product) => {
   const price = product.price.toLocaleString("ru-RU");
 
-  return `
+  const html = `
 <article
   class="product-tile"
   onclick="navigateTo('/product/${product.id}')"
@@ -16,8 +16,10 @@ window.createProductCard = function (product) {
     </div>
     <div class="product-tile__extra">
       <p class="product-tile__description">${product.description}</p>
-      <button class="product-tile__btn">Выбрать размер</button>
+      <button class="product-tile__btn btn-secondary">{{productCard.selectSize}}</button>
     </div>
   </div>
 </article>`.trim();
+  window.registerTemplate(`product-card-${product.id}`, html);
+  return window.translate(html);
 };
