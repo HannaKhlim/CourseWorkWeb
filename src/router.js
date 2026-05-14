@@ -1,13 +1,14 @@
 const mainContent = document.getElementById("main-content");
 
 const pages = {
-  "/": "src/pages/home.html",
-  "/products": "src/pages/products.html",
+  "/": "/src/pages/home.html",
+  "/products": "/src/pages/products.html",
+  "/product/:id": "/src/pages/productDetails.html",
 };
 
 const renderNotFound = async () => {
   try {
-    const response = await fetch("src/pages/404.html");
+    const response = await fetch("/src/pages/404.html");
     return response.text();
   } catch (error) {
     console.error("Error loading 404 page:", error);
@@ -15,9 +16,24 @@ const renderNotFound = async () => {
   }
 };
 
+const matchRoute = (path) => {
+  if (pages[path]) return pages[path];
+  for (const pattern of Object.keys(pages)) {
+    if (!pattern.includes(":")) continue;
+    const regex = new RegExp("^" + pattern.replace(/:[^/]+/g, "[^/]+") + "$");
+    if (regex.test(path)) return pages[pattern];
+  }
+  return null;
+};
+
 const route = async () => {
   const path = window.location.pathname;
-  const pageFile = pages[path];
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("gender")) {
+    localStorage.setItem("selectedGender", params.get("gender"));
+    document.dispatchEvent(new Event("localstorage:updated"));
+  }
+  const pageFile = matchRoute(path);
 
   let content;
   if (pageFile) {
@@ -33,7 +49,11 @@ const route = async () => {
   }
 
   registerTemplate("main-content", content);
-  mainContent.innerHTML = translate(content);
+  const translated = translate(content);
+  mainContent.replaceChildren(
+    document.createRange().createContextualFragment(translated),
+  );
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 window.addEventListener("popstate", route);

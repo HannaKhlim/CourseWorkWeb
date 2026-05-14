@@ -239,6 +239,7 @@ main {
         font-family: Roboto;
         font-size: 18px;
         align-self: center;
+        cursor: pointer;
 
         @media (max-width: $mobile-max-width) {
           font-size: 14px;
@@ -360,5 +361,219 @@ main {
         min-height: 20vw;
       }
     }
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+
+  @media (max-width: $mobile-max-width) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+.product-tile {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3 / 4;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 33%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    padding: 14px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__brand {
+    color: #ccc;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &__price {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__extra {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.3s ease;
+  }
+
+  &:hover &__extra {
+    max-height: 200px;
+    opacity: 1;
+  }
+
+  &__description {
+    color: #e0e0e0;
+    font-size: 13px;
+    line-height: 140%;
+  }
+
+  &__btn {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.product-details {
+  display: flex;
+  gap: 60px;
+  padding: 20px 0;
+
+  @media (max-width: $mobile-max-width) {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__image-wrapper {
+    flex: 1;
+    max-width: 480px;
+
+    @media (max-width: $mobile-max-width) {
+      max-width: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__brand {
+    font-size: 13px;
+    color: #777;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__name {
+    font-size: 28px;
+    font-weight: 700;
+
+    @media (max-width: $mobile-max-width) {
+      font-size: 20px;
+    }
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 700;
+
+    @media (max-width: $mobile-max-width) {
+      font-size: 18px;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 150%;
+    color: #444;
+  }
+
+  &__btn {
+    width: fit-content;
+    padding: 12px 32px;
+    font-size: 16px;
+  }
+
+  &__loading {
+    color: #777;
+    font-size: 16px;
+  }
+}
+
+.hero-banner {
+  width: calc(100% + 160px);
+  margin: 0 -80px;
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.genders {
+  display: flex;
+  padding: 50px 0;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media (max-width: $mobile-max-width) {
+    display: none;
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__label {
+    writing-mode: sideways-lr;
+    color: #525252;
+    font-size: 32px;
+    font-weight: 700;
+    flex-shrink: 0;
   }
 }
