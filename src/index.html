@@ -13,20 +13,17 @@
     />
   </head>
   <body>
-    <script src="/src/i18n.js"></script>
+    <script type="module" src="/src/utils/i18n.js"></script>
+    <script type="module" src="/src/utils/storageService.js"></script>
 
     <div id="header-container"></div>
-    <script src="/src/loadHeader.js"></script>
+    <script type="module" src="/src/utils/loadHeader.js"></script>
 
     <main id="main-content"></main>
 
     <div id="footer-container"></div>
-    <script src="/src/loadFooter.js"></script>
+    <script type="module" src="/src/utils/loadFooter.js"></script>
 
-    <script src="/src/components/productCard.js"></script>
-    <script src="/src/components/productsGrid.js"></script>
-    <script src="/src/components/productDetails.js"></script>
-
-    <script src="/src/router.js"></script>
+    <script type="module" src="/src/router.js"></script>
   </body>
 </html>

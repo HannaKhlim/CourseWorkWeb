@@ -1,20 +1,24 @@
+import { selectLanguage } from "./storageService.js";
+
 const translations = {
   ru: {
+    genders: {
+      women: "ЖЕНЩИНЫ",
+      men: "МУЖЧИНЫ",
+      kids: "ДЕТИ",
+    },
+    categories: {
+      clothes: "Одежда",
+      shoes: "Обувь",
+      bags: "Сумки и аксессуары",
+      underwear: "Нижнее бельё",
+    },
     header: {
       changeTheme: "Сменить тему",
       accessibility: "Слабовидящим",
       changeLanguage: "Сменить язык",
       contactlessDelivery: "Бесконтактная доставка",
-      nav: {
-        women: "ЖЕНЩИНЫ",
-        men: "МУЖЧИНЫ",
-        kids: "ДЕТИ",
-        clothes: "Одежда",
-        shoes: "Обувь",
-        bags: "Сумки и аксессуары",
-        underwear: "Нижнее бельё",
-        searchPlaceholder: "Поиск",
-      },
+      searchPlaceholder: "Поиск",
     },
     footer: {
       info: {
@@ -67,31 +71,34 @@ const translations = {
       message: "Страница, которую вы ищете, не существует.",
       cta: "ВЕРНУТЬСЯ НА ГЛАВНУЮ",
     },
-    home: {
-      women: "ЖЕНЩИНЫ",
-      men: "МУЖЧИНЫ",
-      kids: "ДЕТИ",
-    },
     productCard: {
       selectSize: "Выбрать размер",
     },
+    productDetails: {
+      id: "Артикул",
+      materials: "Материалы",
+      origin: "Страна производства",
+      color: "Цвет",
+    },
   },
   en: {
+    genders: {
+      women: "WOMEN",
+      men: "MEN",
+      kids: "KIDS",
+    },
+    categories: {
+      clothes: "Clothing",
+      shoes: "Shoes",
+      bags: "Bags & Accessories",
+      underwear: "Underwear",
+    },
     header: {
       changeTheme: "Change Theme",
       accessibility: "Accessibility",
       changeLanguage: "Change Language",
       contactlessDelivery: "Contactless Delivery",
-      nav: {
-        women: "WOMEN",
-        men: "MEN",
-        kids: "KIDS",
-        clothes: "Clothing",
-        shoes: "Shoes",
-        bags: "Bags & Accessories",
-        underwear: "Underwear",
-        searchPlaceholder: "Search",
-      },
+      searchPlaceholder: "Search",
     },
     footer: {
       info: {
@@ -144,13 +151,14 @@ const translations = {
       message: "The page you are looking for does not exist.",
       cta: "BACK TO HOME",
     },
-    home: {
-      women: "WOMEN",
-      men: "MEN",
-      kids: "KIDS",
-    },
     productCard: {
       selectSize: "Select Size",
+    },
+    productDetails: {
+      id: "Article",
+      materials: "Materials",
+      origin: "Country of Origin",
+      color: "Color",
     },
   },
 };
@@ -167,9 +175,9 @@ const getNestedValue = (obj, path) => {
   return result;
 };
 
-const getCurrentLang = () => localStorage.getItem("lang") || "ru";
+export const getCurrentLang = () => localStorage.getItem("lang") || "ru";
 
-const translate = (html) => {
+export const translate = (html) => {
   const t = translations[getCurrentLang()];
   return html.replace(
     /\{\{([^}]+)\}\}/g,
@@ -179,9 +187,9 @@ const translate = (html) => {
 
 const templates = new Map();
 
-const registerTemplate = (id, html) => templates.set(id, html);
+export const registerTemplate = (id, html) => templates.set(id, html);
 
-const applyTranslations = () => {
+export const applyTranslations = () => {
   templates.forEach((html, id) => {
     const el = document.getElementById(id);
     if (el)
@@ -192,13 +200,7 @@ const applyTranslations = () => {
   document.dispatchEvent(new Event("i18n:applied"));
 };
 
-const toggleLanguage = () => {
-  localStorage.setItem("lang", getCurrentLang() === "ru" ? "en" : "ru");
+export const toggleLanguage = () => {
+  selectLanguage(getCurrentLang() === "ru" ? "en" : "ru");
   applyTranslations();
 };
-
-window.getCurrentLang = getCurrentLang;
-window.translate = translate;
-window.registerTemplate = registerTemplate;
-window.applyTranslations = applyTranslations;
-window.toggleLanguage = toggleLanguage;

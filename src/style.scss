@@ -460,7 +460,6 @@ main {
 .product-details {
   display: flex;
   gap: 60px;
-  padding: 20px 0;
 
   @media (max-width: $mobile-max-width) {
     flex-direction: column;
@@ -488,24 +487,24 @@ main {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    justify-content: center;
-  }
-
-  &__brand {
-    font-size: 13px;
-    color: #777;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
   }
 
   &__name {
-    font-size: 28px;
+    display: inline-block;
+    font-size: 48px;
     font-weight: 700;
 
     @media (max-width: $mobile-max-width) {
       font-size: 20px;
     }
+  }
+
+  &__brand {
+    font-size: 24px;
+    color: #777;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   &__price {
@@ -518,20 +517,37 @@ main {
   }
 
   &__description {
-    font-size: 15px;
-    line-height: 150%;
-    color: #444;
+    font-size: 18px;
+    line-height: 170%;
+    color: #525252;
+    letter-spacing: 0.72px;
   }
 
-  &__btn {
-    width: fit-content;
-    padding: 12px 32px;
-    font-size: 16px;
+  &__materials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-label {
+      font-size: 24px;
+    }
+
+    &-value {
+      font-size: 18px;
+      color: #525252;
+    }
   }
 
-  &__loading {
-    color: #777;
-    font-size: 16px;
+  &__attributes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__attribute {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
   }
 }
 

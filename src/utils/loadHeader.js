@@ -1,3 +1,12 @@
+import {
+  selectGender,
+  selectCategory,
+  getSelectedGender,
+  getSelectedCategory,
+} from "./storageService.js";
+import { registerTemplate, translate, toggleLanguage } from "./i18n.js";
+import { navigateTo } from "../router.js";
+
 const getRadios = (form) => form.querySelectorAll('input[type="radio"]');
 
 const clearRadioSelection = (form) => {
@@ -22,8 +31,8 @@ const initializeHeaderHandlers = () => {
     );
 
     if (selectedGender && selectedCategory) {
-      localStorage.setItem("selectedGender", selectedGender.value);
-      localStorage.setItem("selectedCategory", selectedCategory.value);
+      selectGender(selectedGender.value);
+      selectCategory(selectedCategory.value);
       navigateTo("/products");
     }
   };
@@ -36,8 +45,8 @@ const initializeHeaderHandlers = () => {
 const initializeDefaultSelections = () => {
   clearRadioSelection(document.querySelector("#gender-selection"));
   clearRadioSelection(document.querySelector("#category-selection"));
-  const defaultGender = localStorage.getItem("selectedGender") || "women";
-  const defaultCategory = localStorage.getItem("selectedCategory");
+  const defaultGender = getSelectedGender();
+  const defaultCategory = getSelectedCategory();
 
   const genderRadio = document.querySelector(
     `#gender-selection input[value="${defaultGender}"]`,
@@ -65,9 +74,11 @@ fetch("/src/components/header.html")
       registerTemplate("header-container", html);
       headerContainer.innerHTML = translate(html);
       initHeader();
+      document.addEventListener("i18n:applied", initHeader);
+      document.addEventListener(
+        "localstorage:updated",
+        initializeDefaultSelections,
+      );
     }
   })
   .catch((error) => console.error("Error loading header:", error));
-
-document.addEventListener("i18n:applied", initHeader);
-document.addEventListener("localstorage:updated", initHeader);

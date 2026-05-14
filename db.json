@@ -1,84 +1,30 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Юбка миди",
-      "brand": "LOVE REPUBLIC",
+      "id": 1000,
       "price": 3400,
-      "category": "outerwear",
-      "image": "/public/photos/skirt.png",
-      "description": "Стильная юбка миди из качественной ткани",
-      "inStock": true
-    },
-    {
-      "id": 2,
-      "name": "Свитер женский",
-      "brand": "GANT",
-      "price": 5200,
-      "category": "Трикотаж",
-      "image": "./public/photos/sweater.jpg",
-      "description": "Теплый свитер из шерсти",
-      "inStock": true
-    },
-    {
-      "id": 3,
-      "name": "Сапоги замшевые",
-      "brand": "ARMANI EXCHANGE",
-      "price": 8900,
-      "category": "Сапоги",
-      "image": "./public/photos/boots.jpg",
-      "description": "Элегантные сапоги из натуральной замши",
-      "inStock": true
-    },
-    {
-      "id": 4,
-      "name": "Пальто зимнее",
+      "gender": "women",
+      "category": "clothes",
+      "availableSizes": ["S", "M", "L"],
       "brand": "LOVE REPUBLIC",
-      "price": 9500,
-      "category": "Верхняя одежда",
-      "image": "./public/photos/coat.jpg",
-      "description": "Теплое пальто на утеплителе",
-      "inStock": true
-    },
-    {
-      "id": 5,
-      "name": "Кардиган вязаный",
-      "brand": "GANT",
-      "price": 4800,
-      "category": "Трикотаж",
-      "image": "./public/photos/cardigan.jpg",
-      "description": "Комфортный кардиган из натуральной пряжи",
-      "inStock": false
-    },
-    {
-      "id": 6,
-      "name": "Серьги золотые",
-      "brand": "ACCESSORIES",
-      "price": 1200,
-      "category": "Аксессуары",
-      "image": "./public/photos/acc1.jpg",
-      "description": "Изящные золотые серьги",
-      "inStock": true
-    },
-    {
-      "id": 7,
-      "name": "Рубашка мужская",
-      "brand": "ARMANI EXCHANGE",
-      "price": 3600,
-      "category": "Мужчины",
-      "image": "./public/photos/shirt.jpg",
-      "description": "Классическая хлопковая рубашка",
-      "inStock": true
-    },
-    {
-      "id": 8,
-      "name": "Платье детское",
-      "brand": "BABY REPUBLIC",
-      "price": 2400,
-      "category": "Дети",
-      "image": "./public/photos/dress-kids.jpg",
-      "description": "Яркое платье для девочки",
-      "inStock": true
+      "name": { "ru": "Юбка миди", "en": "Midi Skirt" },
+      "image": "/public/photos/skirt.png",
+      "description": {
+        "ru": "Стильная юбка миди из качественной ткани",
+        "en": "Stylish midi skirt made of high-quality fabric"
+      },
+      "color": {
+        "ru": "Черный",
+        "en": "Black"
+      },
+      "materials": {
+        "ru": "Полиэстер 100%",
+        "en": "Polyester 100%"
+      },
+      "origin": {
+        "ru": "Китай",
+        "en": "China"
+      }
     }
   ]
 }
