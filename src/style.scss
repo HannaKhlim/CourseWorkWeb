@@ -29,6 +29,11 @@ $desktop-max-width: 1440px;
   vertical-align: middle;
 }
 
+html {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+}
+
 body {
   min-width: $mobile-min-width;
   max-width: $desktop-max-width;
@@ -502,7 +507,7 @@ main {
       cursor: default;
     }
 
-    &.pagination__active {
+    &.pagination--active {
       background: #000;
       color: #fff;
       border-color: #000;

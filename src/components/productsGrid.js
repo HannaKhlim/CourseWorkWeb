@@ -3,6 +3,7 @@ import {
   getSelectedGender,
 } from "../utils/storageService.js";
 import { createProductCard } from "./productCard.js";
+import { productsApi } from "../utils/api.js";
 
 const PAGE_SIZE = 10;
 
@@ -11,64 +12,52 @@ export const initProductsPage = async () => {
   if (!grid) return;
 
   try {
-    const response = await fetch("/db.json");
-    const data = await response.json();
-    const products = data.products || [];
     const selectedCategory = getSelectedCategory();
     const selectedGender = getSelectedGender();
-    const filteredProducts = products.filter(
-      (p) => p.gender === selectedGender && p.category === selectedCategory,
-    );
+    const products = await productsApi.getAll({
+      gender: selectedGender,
+      category: selectedCategory,
+    });
 
     let currentPage = 1;
-    const totalPages = Math.ceil(filteredProducts.length / PAGE_SIZE);
+    const totalPages = Math.ceil(products.length / PAGE_SIZE);
+
+    const prev = document.getElementById("pagination-prev");
+    const next = document.getElementById("pagination-next");
+    const pagesContainer = document.getElementById("pagination-pages");
+
+    prev.addEventListener("click", () => {
+      currentPage--;
+      render();
+    });
+    next.addEventListener("click", () => {
+      currentPage++;
+      render();
+    });
 
     const render = () => {
       const start = (currentPage - 1) * PAGE_SIZE;
-      const pageItems = filteredProducts.slice(start, start + PAGE_SIZE);
+      const pageItems = products.slice(start, start + PAGE_SIZE);
       grid.innerHTML = pageItems.map(createProductCard).join("");
       renderPagination();
     };
 
     const renderPagination = () => {
-      let pagination = document.getElementById("pagination");
-      if (!pagination) {
-        pagination = document.createElement("div");
-        pagination.id = "pagination";
-        pagination.className = "pagination";
-        grid.parentNode.insertBefore(pagination, grid.nextSibling);
-      }
-      pagination.innerHTML = "";
-      if (totalPages <= 1) return;
-
-      const prev = document.createElement("button");
-      prev.textContent = "←";
+      pagesContainer.innerHTML = "";
       prev.disabled = currentPage === 1;
-      prev.addEventListener("click", () => {
-        currentPage--;
-        render();
-      });
-      pagination.appendChild(prev);
+      next.disabled = currentPage === totalPages;
 
       for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
         btn.textContent = i;
-        if (i === currentPage) btn.classList.add("pagination__active");
+        if (i === currentPage) btn.classList.add("pagination--active");
         btn.addEventListener("click", () => {
           currentPage = i;
           render();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
-        pagination.appendChild(btn);
+        pagesContainer.appendChild(btn);
       }
-
-      const next = document.createElement("button");
-      next.textContent = "→";
-      next.disabled = currentPage === totalPages;
-      next.addEventListener("click", () => {
-        currentPage++;
-        render();
-      });
-      pagination.appendChild(next);
     };
 
     render();

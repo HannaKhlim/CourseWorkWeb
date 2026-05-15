@@ -1,6 +1,7 @@
 import { navigateTo } from "../router.js";
 import { registerTemplate, translate } from "../utils/i18n.js";
 import { getSelectedLanguage } from "../utils/storageService.js";
+import { productsApi } from "../utils/api.js";
 
 export const initProductDetails = async (id) => {
   const selectedLanguage = getSelectedLanguage();
@@ -8,11 +9,7 @@ export const initProductDetails = async (id) => {
   if (!container) return;
 
   try {
-    const response = await fetch("/db.json");
-    const data = await response.json();
-    const product = (data.products || []).find(
-      (p) => String(p.id) === String(id),
-    );
+    const product = await productsApi.getById(id).catch(() => null);
 
     if (!product) {
       navigateTo("/404");
