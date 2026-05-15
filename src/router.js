@@ -4,6 +4,7 @@ import { initProductsPage } from "./components/productsGrid.js";
 import { initProductDetails } from "./components/productDetails.js";
 
 const mainContent = document.getElementById("main-content");
+const loader = document.getElementById("loader");
 
 const pages = {
   "/": "/src/pages/home.html",
@@ -15,6 +16,8 @@ const pageInits = {
   "/products": () => initProductsPage(),
   "/product/:id": ({ id }) => initProductDetails(id),
 };
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const renderNotFound = async () => {
   try {
@@ -43,6 +46,8 @@ const matchRoute = (path) => {
 };
 
 const route = async () => {
+  loader.classList.add("visible");
+  await sleep(500);
   const path = window.location.pathname;
   const searchParams = new URLSearchParams(window.location.search);
   if (searchParams.has("gender")) {
@@ -72,6 +77,8 @@ const route = async () => {
 
   const init = match && pageInits[match.pattern];
   if (init) init(match.params);
+
+  loader.classList.remove("visible");
 };
 
 export const navigateTo = (route) => {
@@ -82,6 +89,12 @@ export const navigateTo = (route) => {
 window.navigateTo = navigateTo;
 window.addEventListener("popstate", route);
 window.addEventListener("DOMContentLoaded", route);
+document.addEventListener("i18n:applied", () => {
+  const path = window.location.pathname;
+  const match = matchRoute(path);
+  const init = match && pageInits[match.pattern];
+  if (init) init(match.params);
+});
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a[data-link]");
   if (!link) return;

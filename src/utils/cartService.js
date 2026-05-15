@@ -1,0 +1,1 @@
+const handleAddToCartClick = (product) => {};

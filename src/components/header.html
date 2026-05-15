@@ -20,7 +20,7 @@
       />
       <span>WhatsApp</span>
     </div>
-    <div class="header-top__item header-top__item--cta">
+    <div id="theme-toggle" class="header-top__item header-top__item--cta">
       <img
         src="/public/icons/sparkles.svg"
         alt="Change Theme"
@@ -28,7 +28,10 @@
       />
       <span>{{header.changeTheme}}</span>
     </div>
-    <div class="header-top__item header-top__item--cta">
+    <div
+      id="accessibility-settings"
+      class="header-top__item header-top__item--cta"
+    >
       <img
         src="/public/icons/vision.png"
         alt="Vision Support"
@@ -60,13 +63,8 @@
         alt="menu"
         class="header-bottom-mobile__icon"
       />
-      <img
-        src="/public/icons/magnifier.png"
-        alt="search"
-        class="header-bottom-mobile__icon"
-      />
     </div>
-    <div class="header-bottom__item">
+    <div class="header-bottom__item logo-wrapper">
       <img
         src="/public/logos/logo.png"
         alt="DEEPMAG"
@@ -104,6 +102,7 @@
           src="/public/icons/enter.png"
           alt="Login"
           class="header-profile__icon"
+          onclick="navigateTo('/login')"
         />
       </div>
       <div class="header-profile__item">
@@ -111,6 +110,7 @@
           src="/public/icons/heart.png"
           alt="Favorites"
           class="header-profile__icon"
+          id="clear-storage"
         />
       </div>
       <div class="header-profile__item">
@@ -118,6 +118,7 @@
           src="/public/icons/cart.svg"
           alt="Cart"
           class="header-profile__icon"
+          onclick="navigateTo('/checkout')"
         />
       </div>
     </div>
@@ -181,7 +182,7 @@
         value="accessories"
       />
       <label for="accessories" class="header-navigation__option-label"
-        >{{categories.bags}}</label
+        >{{categories.accessories}}</label
       >
       <input
         class="header-navigation__option"

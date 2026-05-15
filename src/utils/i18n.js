@@ -10,7 +10,7 @@ const translations = {
     categories: {
       clothes: "Одежда",
       shoes: "Обувь",
-      bags: "Сумки и аксессуары",
+      accessories: "Сумки и аксессуары",
       underwear: "Нижнее бельё",
     },
     header: {
@@ -79,6 +79,9 @@ const translations = {
       materials: "Материалы",
       origin: "Страна производства",
       color: "Цвет",
+      sizes: "Размеры",
+      addToCart: "ДОБАВИТЬ В КОРЗИНУ",
+      addToWishlist: "Добавить в избранное",
     },
   },
   en: {
@@ -90,7 +93,7 @@ const translations = {
     categories: {
       clothes: "Clothing",
       shoes: "Shoes",
-      bags: "Bags & Accessories",
+      accessories: "Bags & Accessories",
       underwear: "Underwear",
     },
     header: {
@@ -159,6 +162,9 @@ const translations = {
       materials: "Materials",
       origin: "Country of Origin",
       color: "Color",
+      sizes: "Sizes",
+      addToCart: "ADD TO CART",
+      addToWishlist: "Add to Wishlist",
     },
   },
 };

@@ -3,6 +3,9 @@ import {
   selectCategory,
   getSelectedGender,
   getSelectedCategory,
+  getSelectedTheme,
+  selectTheme,
+  clearStorage,
 } from "./storageService.js";
 import { registerTemplate, translate, toggleLanguage } from "./i18n.js";
 import { navigateTo } from "../router.js";
@@ -58,12 +61,36 @@ const initializeDefaultSelections = () => {
   if (categoryRadio) categoryRadio.checked = true;
 };
 
+const initSearchHandlers = () => {
+  document.querySelectorAll(".header-search").forEach((input) => {
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        const value = input.value.trim();
+        if (value) navigateTo(`/product/${encodeURIComponent(value)}`);
+      }
+    });
+  });
+};
+
 const initHeader = () => {
   initializeHeaderHandlers();
   initializeDefaultSelections();
+  initSearchHandlers();
   document
     .getElementById("lang-toggle")
     .addEventListener("click", toggleLanguage);
+
+  document.documentElement.setAttribute("data-theme", getSelectedTheme());
+
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    const next = getSelectedTheme() === "dark" ? "light" : "dark";
+    selectTheme(next);
+    document.documentElement.setAttribute("data-theme", next);
+  });
+
+  document
+    .getElementById("clear-storage")
+    .addEventListener("click", clearStorage);
 };
 
 fetch("/src/components/header.html")

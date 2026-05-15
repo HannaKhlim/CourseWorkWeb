@@ -1,3 +1,4 @@
+import { navigateTo } from "../router.js";
 import { registerTemplate, translate } from "../utils/i18n.js";
 import { getSelectedLanguage } from "../utils/storageService.js";
 
@@ -14,6 +15,7 @@ export const initProductDetails = async (id) => {
     );
 
     if (!product) {
+      navigateTo("/404");
       return;
     }
 
@@ -27,6 +29,10 @@ export const initProductDetails = async (id) => {
         <h1 class="product-details__name">${product.name[selectedLanguage]}</h1>
         <h2 class="product-details__brand">${product.brand}</h2>
         <p class="product-details__price">${price} ₽</p>
+        <div class="product-details__actions">
+          <button class="product-details__btn btn-primary">{{productDetails.addToCart}}</button>
+          <img src="/public/icons/heart.svg" alt="{{productDetails.addToWishlist}}" class="product-details__wishlist" />
+        </div>
         <p class="product-details__description">${product.description[selectedLanguage]}</p>
         <div class="product-details__materials">
           <p class="product-details__materials-label">{{productDetails.materials}}:</p>
@@ -44,6 +50,10 @@ export const initProductDetails = async (id) => {
           <div class="product-details__attribute">
             <span class="product-details__attribute-name">{{productDetails.color}}:</span>
             <span class="product-details__attribute-value">${product.color[selectedLanguage]}</span>
+          </div>
+          <div class="product-details__attribute">
+            <span class="product-details__attribute-name">{{productDetails.sizes}}:</span>
+            <span class="product-details__attribute-value">${product.sizes.join(", ")}</span>
           </div>
         </div>
       </div>

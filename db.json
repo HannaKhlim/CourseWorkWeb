@@ -5,7 +5,7 @@
       "price": 3400,
       "gender": "women",
       "category": "clothes",
-      "availableSizes": ["S", "M", "L"],
+      "sizes": ["S", "M", "L"],
       "brand": "LOVE REPUBLIC",
       "name": { "ru": "Юбка миди", "en": "Midi Skirt" },
       "image": "/public/photos/skirt.png",
@@ -24,7 +24,689 @@
       "origin": {
         "ru": "Китай",
         "en": "China"
-      }
+      },
+      "suggestions": [1001, 1002]
+    },
+    {
+      "id": 1001,
+      "price": 5990,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L"],
+      "brand": "ZARA",
+      "name": { "ru": "Платье в цветочный принт", "en": "Floral Print Dress" },
+      "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Лёгкое платье с цветочным принтом для тёплых дней",
+        "en": "Light floral print dress perfect for warm days"
+      },
+      "color": { "ru": "Мультиколор", "en": "Multicolor" },
+      "materials": { "ru": "Вискоза 100%", "en": "Viscose 100%" },
+      "origin": { "ru": "Испания", "en": "Spain" },
+      "suggestions": [1000, 1002]
+    },
+    {
+      "id": 1002,
+      "price": 2990,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "brand": "H&M",
+      "name": { "ru": "Белая блузка", "en": "White Blouse" },
+      "image": "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Классическая белая блузка с лёгкой тканью",
+        "en": "Classic white blouse in lightweight fabric"
+      },
+      "color": { "ru": "Белый", "en": "White" },
+      "materials": {
+        "ru": "Хлопок 80%, Полиэстер 20%",
+        "en": "Cotton 80%, Polyester 20%"
+      },
+      "origin": { "ru": "Бангладеш", "en": "Bangladesh" },
+      "suggestions": [1000, 1003]
+    },
+    {
+      "id": 1003,
+      "price": 4490,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["24", "26", "28", "30", "32"],
+      "brand": "Levi's",
+      "name": { "ru": "Джинсы скинни", "en": "Skinny Jeans" },
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Узкие джинсы с высокой посадкой из стрейч-денима",
+        "en": "High-waist skinny jeans in stretch denim"
+      },
+      "color": { "ru": "Синий", "en": "Blue" },
+      "materials": {
+        "ru": "Хлопок 92%, Эластан 8%",
+        "en": "Cotton 92%, Elastane 8%"
+      },
+      "origin": { "ru": "США", "en": "USA" },
+      "suggestions": [1002, 1008]
+    },
+    {
+      "id": 1004,
+      "price": 14990,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L"],
+      "brand": "Massimo Dutti",
+      "name": { "ru": "Шерстяное пальто", "en": "Wool Coat" },
+      "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Элегантное пальто из натуральной шерсти на осень и зиму",
+        "en": "Elegant natural wool coat for autumn and winter"
+      },
+      "color": { "ru": "Бежевый", "en": "Beige" },
+      "materials": {
+        "ru": "Шерсть 70%, Полиамид 30%",
+        "en": "Wool 70%, Polyamide 30%"
+      },
+      "origin": { "ru": "Португалия", "en": "Portugal" },
+      "suggestions": [1005, 1007]
+    },
+    {
+      "id": 1005,
+      "price": 3990,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "brand": "COS",
+      "name": { "ru": "Вязаный свитер", "en": "Knit Sweater" },
+      "image": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Мягкий вязаный свитер с круглым вырезом",
+        "en": "Soft knit sweater with a round neckline"
+      },
+      "color": { "ru": "Кремовый", "en": "Cream" },
+      "materials": {
+        "ru": "Мериносовая шерсть 100%",
+        "en": "Merino Wool 100%"
+      },
+      "origin": { "ru": "Великобритания", "en": "United Kingdom" },
+      "suggestions": [1004, 1010]
+    },
+    {
+      "id": 1006,
+      "price": 1490,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "brand": "Uniqlo",
+      "name": { "ru": "Базовая футболка", "en": "Basic T-Shirt" },
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Базовая хлопковая футболка для повседневного образа",
+        "en": "Essential cotton t-shirt for everyday wear"
+      },
+      "color": { "ru": "Белый", "en": "White" },
+      "materials": { "ru": "Хлопок 100%", "en": "Cotton 100%" },
+      "origin": { "ru": "Япония", "en": "Japan" },
+      "suggestions": [1003, 1009]
+    },
+    {
+      "id": 1007,
+      "price": 7490,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L"],
+      "brand": "Mango",
+      "name": { "ru": "Пиджак", "en": "Blazer" },
+      "image": "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Приталенный пиджак для офиса и выхода в свет",
+        "en": "Fitted blazer suitable for office and evening outings"
+      },
+      "color": { "ru": "Черный", "en": "Black" },
+      "materials": {
+        "ru": "Полиэстер 65%, Вискоза 35%",
+        "en": "Polyester 65%, Viscose 35%"
+      },
+      "origin": { "ru": "Испания", "en": "Spain" },
+      "suggestions": [1008, 1002]
+    },
+    {
+      "id": 1008,
+      "price": 4990,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L"],
+      "brand": "& Other Stories",
+      "name": { "ru": "Широкие брюки", "en": "Wide Leg Trousers" },
+      "image": "https://images.unsplash.com/photo-1594938298603-c8148c4b4c72?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Свободные брюки с широкими штанинами и высокой посадкой",
+        "en": "Relaxed wide-leg trousers with a high waist"
+      },
+      "color": { "ru": "Бежевый", "en": "Beige" },
+      "materials": {
+        "ru": "Лён 55%, Хлопок 45%",
+        "en": "Linen 55%, Cotton 45%"
+      },
+      "origin": { "ru": "Швеция", "en": "Sweden" },
+      "suggestions": [1007, 1003]
+    },
+    {
+      "id": 1009,
+      "price": 2490,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L"],
+      "brand": "befree",
+      "name": { "ru": "Джинсовые шорты", "en": "Denim Shorts" },
+      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Короткие джинсовые шорты с необработанным краем",
+        "en": "Short denim shorts with a raw hem"
+      },
+      "color": { "ru": "Голубой", "en": "Light Blue" },
+      "materials": {
+        "ru": "Хлопок 98%, Эластан 2%",
+        "en": "Cotton 98%, Elastane 2%"
+      },
+      "origin": { "ru": "Россия", "en": "Russia" },
+      "suggestions": [1006, 1003]
+    },
+    {
+      "id": 1010,
+      "price": 4290,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["S", "M", "L", "XL"],
+      "brand": "LOVE REPUBLIC",
+      "name": { "ru": "Оверсайз кардиган", "en": "Oversized Cardigan" },
+      "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Уютный кардиган свободного кроя для домашнего образа",
+        "en": "Cozy oversized cardigan for a relaxed look"
+      },
+      "color": { "ru": "Серый", "en": "Grey" },
+      "materials": {
+        "ru": "Акрил 60%, Шерсть 40%",
+        "en": "Acrylic 60%, Wool 40%"
+      },
+      "origin": { "ru": "Китай", "en": "China" },
+      "suggestions": [1005, 1012]
+    },
+    {
+      "id": 1011,
+      "price": 3290,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "brand": "Nike",
+      "name": { "ru": "Спортивные леггинсы", "en": "Sports Leggings" },
+      "image": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Функциональные компрессионные леггинсы для тренировок",
+        "en": "Functional compression leggings for workouts"
+      },
+      "color": { "ru": "Черный", "en": "Black" },
+      "materials": {
+        "ru": "Нейлон 75%, Спандекс 25%",
+        "en": "Nylon 75%, Spandex 25%"
+      },
+      "origin": { "ru": "Вьетнам", "en": "Vietnam" },
+      "suggestions": [1012, 1006]
+    },
+    {
+      "id": 1012,
+      "price": 5490,
+      "gender": "women",
+      "category": "clothes",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "brand": "Adidas",
+      "name": { "ru": "Худи на молнии", "en": "Zip-Up Hoodie" },
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Спортивное худи с молнией по всей длине и капюшоном",
+        "en": "Athletic zip-through hoodie with a drawcord hood"
+      },
+      "color": { "ru": "Серый меланж", "en": "Grey Marl" },
+      "materials": {
+        "ru": "Хлопок 70%, Полиэстер 30%",
+        "en": "Cotton 70%, Polyester 30%"
+      },
+      "origin": { "ru": "Индонезия", "en": "Indonesia" },
+      "suggestions": [1011, 1010]
+    },
+    {
+      "id": 1013,
+      "price": 4990,
+      "gender": "men",
+      "category": "clothes",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "brand": "Tommy Hilfiger",
+      "name": { "ru": "Оксфордская рубашка", "en": "Oxford Shirt" },
+      "image": "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Классическая рубашка из оксфордской ткани с пуговицами на воротнике",
+        "en": "Classic button-down collar oxford shirt"
+      },
+      "color": { "ru": "Голубой", "en": "Light Blue" },
+      "materials": { "ru": "Хлопок 100%", "en": "Cotton 100%" },
+      "origin": { "ru": "Индия", "en": "India" },
+      "suggestions": [1014, 1015]
+    },
+    {
+      "id": 1014,
+      "price": 3790,
+      "gender": "men",
+      "category": "clothes",
+      "sizes": ["28", "30", "32", "34", "36"],
+      "brand": "H&M",
+      "name": { "ru": "Чинос слим фит", "en": "Slim Fit Chinos" },
+      "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Облегающие чинос из эластичного хлопка с зауженным кроем",
+        "en": "Slim-fit stretch cotton chinos with a tapered leg"
+      },
+      "color": { "ru": "Хаки", "en": "Khaki" },
+      "materials": {
+        "ru": "Хлопок 97%, Эластан 3%",
+        "en": "Cotton 97%, Elastane 3%"
+      },
+      "origin": { "ru": "Бангладеш", "en": "Bangladesh" },
+      "suggestions": [1013, 1015]
+    },
+    {
+      "id": 1015,
+      "price": 8990,
+      "gender": "women",
+      "category": "accessories",
+      "sizes": ["One Size"],
+      "brand": "ZARA",
+      "name": { "ru": "Кожаная сумка-шопер", "en": "Leather Tote Bag" },
+      "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Вместительная сумка-шопер из искусственной кожи с внутренним карманом",
+        "en": "Spacious faux leather tote bag with an interior pocket"
+      },
+      "color": { "ru": "Черный", "en": "Black" },
+      "materials": {
+        "ru": "Искусственная кожа 100%",
+        "en": "Faux Leather 100%"
+      },
+      "origin": { "ru": "Испания", "en": "Spain" },
+      "suggestions": [1000, 1007]
+    },
+    {
+      "id": 1016,
+      "price": 6490,
+      "gender": "men",
+      "category": "accessories",
+      "sizes": ["One Size"],
+      "brand": "Fjällräven",
+      "name": { "ru": "Городской рюкзак", "en": "Urban Backpack" },
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Практичный рюкзак для города с отделением для ноутбука",
+        "en": "Practical urban backpack with a laptop compartment"
+      },
+      "color": { "ru": "Темно-синий", "en": "Navy" },
+      "materials": { "ru": "Нейлон 100%", "en": "Nylon 100%" },
+      "origin": { "ru": "Швеция", "en": "Sweden" },
+      "suggestions": [1013, 1014]
+    },
+    {
+      "id": 1017,
+      "price": 8990,
+      "gender": "women",
+      "category": "accessories",
+      "sizes": ["One Size"],
+      "brand": "Mango",
+      "name": { "ru": "Шёлковый платок", "en": "Silk Scarf" },
+      "image": "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Лёгкий шёлковый платок с абстрактным принтом",
+        "en": "Lightweight silk scarf with an abstract print"
+      },
+      "color": { "ru": "Мультиколор", "en": "Multicolor" },
+      "materials": { "ru": "Шёлк 100%", "en": "Silk 100%" },
+      "origin": { "ru": "Испания", "en": "Spain" },
+      "suggestions": [1015, 1000]
+    },
+    {
+      "id": 1018,
+      "price": 4290,
+      "gender": "men",
+      "category": "accessories",
+      "sizes": ["S", "M", "L", "XL"],
+      "brand": "Hugo Boss",
+      "name": { "ru": "Кожаный ремень", "en": "Leather Belt" },
+      "image": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Классический ремень из натуральной кожи с металлической пряжкой",
+        "en": "Classic genuine leather belt with a metal buckle"
+      },
+      "color": { "ru": "Коричневый", "en": "Brown" },
+      "materials": {
+        "ru": "Натуральная кожа 100%",
+        "en": "Genuine Leather 100%"
+      },
+      "origin": { "ru": "Германия", "en": "Germany" },
+      "suggestions": [1016, 1013]
+    },
+    {
+      "id": 1019,
+      "price": 7490,
+      "gender": "women",
+      "category": "shoes",
+      "sizes": ["36", "37", "38", "39", "40"],
+      "brand": "Steve Madden",
+      "name": { "ru": "Туфли на шпильке", "en": "Stiletto Heels" },
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Элегантные туфли на высоком каблуке из лаковой кожи",
+        "en": "Elegant patent leather stiletto heels"
+      },
+      "color": { "ru": "Черный", "en": "Black" },
+      "materials": { "ru": "Лаковая кожа 100%", "en": "Patent Leather 100%" },
+      "origin": { "ru": "Китай", "en": "China" },
+      "suggestions": [1020, 1000]
+    },
+    {
+      "id": 1020,
+      "price": 5990,
+      "gender": "women",
+      "category": "shoes",
+      "sizes": ["36", "37", "38", "39", "40", "41"],
+      "brand": "Adidas",
+      "name": { "ru": "Белые кроссовки", "en": "White Sneakers" },
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Лёгкие белые кроссовки на платформе для повседневного образа",
+        "en": "Lightweight white platform sneakers for everyday wear"
+      },
+      "color": { "ru": "Белый", "en": "White" },
+      "materials": {
+        "ru": "Текстиль, резиновая подошва",
+        "en": "Textile, rubber sole"
+      },
+      "origin": { "ru": "Вьетнам", "en": "Vietnam" },
+      "suggestions": [1019, 1011]
+    },
+    {
+      "id": 1021,
+      "price": 3490,
+      "gender": "women",
+      "category": "underwear",
+      "sizes": ["XS", "S", "M", "L"],
+      "brand": "Victoria's Secret",
+      "name": { "ru": "Кружевной бралет", "en": "Lace Bralette" },
+      "image": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Нежный бралет из кружева с регулируемыми бретелями",
+        "en": "Delicate lace bralette with adjustable straps"
+      },
+      "color": { "ru": "Пудровый", "en": "Dusty Pink" },
+      "materials": {
+        "ru": "Нейлон 90%, Эластан 10%",
+        "en": "Nylon 90%, Elastane 10%"
+      },
+      "origin": { "ru": "США", "en": "USA" },
+      "suggestions": [1022, 1002]
+    },
+    {
+      "id": 1022,
+      "price": 2990,
+      "gender": "women",
+      "category": "underwear",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "brand": "Calvin Klein",
+      "name": { "ru": "Хлопковые трусы-бикини", "en": "Cotton Bikini Briefs" },
+      "image": "https://images.unsplash.com/photo-1584466977773-e625c37cdd50?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Мягкие хлопковые трусы с эластичным поясом",
+        "en": "Soft cotton bikini briefs with an elastic waistband"
+      },
+      "color": { "ru": "Белый", "en": "White" },
+      "materials": {
+        "ru": "Хлопок 95%, Эластан 5%",
+        "en": "Cotton 95%, Elastane 5%"
+      },
+      "origin": { "ru": "Бангладеш", "en": "Bangladesh" },
+      "suggestions": [1021, 1006]
+    },
+    {
+      "id": 1023,
+      "price": 8990,
+      "gender": "men",
+      "category": "shoes",
+      "sizes": ["40", "41", "42", "43", "44", "45"],
+      "brand": "Nike",
+      "name": { "ru": "Кожаные кроссовки", "en": "Leather Sneakers" },
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Классические кроссовки из белой кожи с резиновой подошвой",
+        "en": "Classic white leather sneakers with a rubber sole"
+      },
+      "color": { "ru": "Белый", "en": "White" },
+      "materials": {
+        "ru": "Натуральная кожа, резиновая подошва",
+        "en": "Genuine leather, rubber sole"
+      },
+      "origin": { "ru": "Индонезия", "en": "Indonesia" },
+      "suggestions": [1024, 1013]
+    },
+    {
+      "id": 1024,
+      "price": 9490,
+      "gender": "men",
+      "category": "shoes",
+      "sizes": ["40", "41", "42", "43", "44"],
+      "brand": "Clarks",
+      "name": { "ru": "Дерби из кожи", "en": "Leather Derby Shoes" },
+      "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Классические мужские туфли дерби из гладкой кожи",
+        "en": "Classic men's smooth leather derby shoes"
+      },
+      "color": { "ru": "Коричневый", "en": "Brown" },
+      "materials": {
+        "ru": "Натуральная кожа, кожаная подошва",
+        "en": "Genuine leather, leather sole"
+      },
+      "origin": { "ru": "Великобритания", "en": "United Kingdom" },
+      "suggestions": [1023, 1014]
+    },
+    {
+      "id": 1025,
+      "price": 2490,
+      "gender": "men",
+      "category": "underwear",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "brand": "Calvin Klein",
+      "name": { "ru": "Боксеры-брифы", "en": "Boxer Briefs" },
+      "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f43?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Удобные боксеры-брифы из хлопка с эластичным поясом",
+        "en": "Comfortable cotton boxer briefs with an elastic waistband"
+      },
+      "color": { "ru": "Серый", "en": "Grey" },
+      "materials": {
+        "ru": "Хлопок 95%, Эластан 5%",
+        "en": "Cotton 95%, Elastane 5%"
+      },
+      "origin": { "ru": "Бангладеш", "en": "Bangladesh" },
+      "suggestions": [1026, 1013]
+    },
+    {
+      "id": 1026,
+      "price": 1990,
+      "gender": "men",
+      "category": "underwear",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "brand": "Tommy Hilfiger",
+      "name": { "ru": "Боксеры классические", "en": "Classic Boxers" },
+      "image": "https://images.unsplash.com/photo-1565693413579-8ff3fdc1b03b?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Свободные боксеры в клетку из хлопкового поплина",
+        "en": "Relaxed checked boxers in cotton poplin"
+      },
+      "color": { "ru": "Синий", "en": "Blue" },
+      "materials": { "ru": "Хлопок 100%", "en": "Cotton 100%" },
+      "origin": { "ru": "Индия", "en": "India" },
+      "suggestions": [1025, 1014]
+    },
+    {
+      "id": 1027,
+      "price": 3490,
+      "gender": "kids",
+      "category": "clothes",
+      "sizes": ["92", "98", "104", "110", "116"],
+      "brand": "GAP Kids",
+      "name": { "ru": "Детское худи", "en": "Kids Hoodie" },
+      "image": "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Тёплое флисовое худи с кенгуру-карманом для детей",
+        "en": "Warm fleece hoodie with a kangaroo pocket for kids"
+      },
+      "color": { "ru": "Синий", "en": "Blue" },
+      "materials": {
+        "ru": "Хлопок 80%, Полиэстер 20%",
+        "en": "Cotton 80%, Polyester 20%"
+      },
+      "origin": { "ru": "Камбоджа", "en": "Cambodia" },
+      "suggestions": [1028, 1029]
+    },
+    {
+      "id": 1028,
+      "price": 4290,
+      "gender": "kids",
+      "category": "clothes",
+      "sizes": ["92", "98", "104", "110", "116", "122"],
+      "brand": "Zara Kids",
+      "name": { "ru": "Джинсовый комбинезон", "en": "Denim Dungarees" },
+      "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Удобный джинсовый комбинезон для активных детей",
+        "en": "Comfortable denim dungarees for active kids"
+      },
+      "color": { "ru": "Голубой", "en": "Light Blue" },
+      "materials": { "ru": "Хлопок 100%", "en": "Cotton 100%" },
+      "origin": { "ru": "Испания", "en": "Spain" },
+      "suggestions": [1027, 1030]
+    },
+    {
+      "id": 1029,
+      "price": 2990,
+      "gender": "kids",
+      "category": "shoes",
+      "sizes": ["22", "23", "24", "25", "26", "27"],
+      "brand": "Converse",
+      "name": { "ru": "Детские кеды", "en": "Kids Canvas Sneakers" },
+      "image": "https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Классические детские кеды из хлопкового холста",
+        "en": "Classic kids canvas sneakers with a rubber toe cap"
+      },
+      "color": { "ru": "Белый", "en": "White" },
+      "materials": {
+        "ru": "Хлопковый холст, резиновая подошва",
+        "en": "Cotton canvas, rubber sole"
+      },
+      "origin": { "ru": "Вьетнам", "en": "Vietnam" },
+      "suggestions": [1030, 1027]
+    },
+    {
+      "id": 1030,
+      "price": 3490,
+      "gender": "kids",
+      "category": "shoes",
+      "sizes": ["28", "29", "30", "31", "32", "33"],
+      "brand": "Geox",
+      "name": { "ru": "Туфли Мэри Джейн", "en": "Mary Jane Shoes" },
+      "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Нарядные детские туфли на ремешке с дышащей подошвой",
+        "en": "Smart kids strap shoes with a breathable sole"
+      },
+      "color": { "ru": "Чёрный", "en": "Black" },
+      "materials": {
+        "ru": "Натуральная кожа, резиновая подошва",
+        "en": "Genuine leather, rubber sole"
+      },
+      "origin": { "ru": "Италия", "en": "Italy" },
+      "suggestions": [1029, 1028]
+    },
+    {
+      "id": 1031,
+      "price": 1990,
+      "gender": "kids",
+      "category": "accessories",
+      "sizes": ["One Size"],
+      "brand": "Samsonite",
+      "name": { "ru": "Детский рюкзак", "en": "Kids Backpack" },
+      "image": "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Яркий детский рюкзак для школы с эргономичными лямками",
+        "en": "Bright kids school backpack with ergonomic straps"
+      },
+      "color": { "ru": "Красный", "en": "Red" },
+      "materials": { "ru": "Нейлон 100%", "en": "Nylon 100%" },
+      "origin": { "ru": "Китай", "en": "China" },
+      "suggestions": [1032, 1027]
+    },
+    {
+      "id": 1032,
+      "price": 990,
+      "gender": "kids",
+      "category": "accessories",
+      "sizes": ["One Size"],
+      "brand": "Nike Kids",
+      "name": { "ru": "Детская бейсболка", "en": "Kids Baseball Cap" },
+      "image": "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Лёгкая хлопковая бейсболка с логотипом",
+        "en": "Lightweight cotton baseball cap with logo"
+      },
+      "color": { "ru": "Черный", "en": "Black" },
+      "materials": { "ru": "Хлопок 100%", "en": "Cotton 100%" },
+      "origin": { "ru": "Китай", "en": "China" },
+      "suggestions": [1031, 1029]
+    },
+    {
+      "id": 1033,
+      "price": 1290,
+      "gender": "kids",
+      "category": "underwear",
+      "sizes": ["92", "98", "104", "110", "116"],
+      "brand": "Marks & Spencer",
+      "name": { "ru": "Хлопковая майка", "en": "Cotton Undershirt" },
+      "image": "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Мягкая хлопковая майка для повседневной носки",
+        "en": "Soft cotton undershirt for everyday wear"
+      },
+      "color": { "ru": "Белый", "en": "White" },
+      "materials": { "ru": "Хлопок 100%", "en": "Cotton 100%" },
+      "origin": { "ru": "Великобритания", "en": "United Kingdom" },
+      "suggestions": [1034, 1027]
+    },
+    {
+      "id": 1034,
+      "price": 1490,
+      "gender": "kids",
+      "category": "underwear",
+      "sizes": ["92", "98", "104", "110", "116", "122"],
+      "brand": "H&M Kids",
+      "name": { "ru": "Набор трусов в принт", "en": "Printed Briefs Set" },
+      "image": "https://images.unsplash.com/photo-1519689373023-dd07c7988603?w=600&fit=crop&auto=format",
+      "description": {
+        "ru": "Набор из 3 хлопковых трусов с весёлыми принтами",
+        "en": "Pack of 3 cotton briefs with fun prints"
+      },
+      "color": { "ru": "Мультиколор", "en": "Multicolor" },
+      "materials": {
+        "ru": "Хлопок 95%, Эластан 5%",
+        "en": "Cotton 95%, Elastane 5%"
+      },
+      "origin": { "ru": "Бангладеш", "en": "Bangladesh" },
+      "suggestions": [1033, 1028]
     }
   ]
 }

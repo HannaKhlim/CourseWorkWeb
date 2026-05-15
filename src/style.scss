@@ -3,6 +3,16 @@
   --secondary-bg-color: #333;
 }
 
+[data-theme="light"] {
+  --theme-bg: #ffffff;
+  --theme-text: #1a1a1a;
+}
+
+[data-theme="dark"] {
+  --theme-bg: #1a1a1a;
+  --theme-text: #f5f5f5;
+}
+
 $mobile-max-width: 1024px;
 $mobile-min-width: 320px;
 $desktop-max-width: 1440px;
@@ -33,6 +43,36 @@ main {
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.35);
+  align-items: center;
+  justify-content: center;
+
+  &.visible {
+    display: flex;
+  }
+
+  &::after {
+    content: "";
+    width: 48px;
+    height: 48px;
+    border: 5px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+}
+
 %btn-common {
   cursor: pointer;
   border: none;
@@ -53,6 +93,12 @@ main {
   color: #525252;
   background-color: #fff;
   border: 3px solid #525252;
+}
+
+.logo-wrapper {
+  @media (max-width: $mobile-max-width) {
+    display: none;
+  }
 }
 
 .header {
@@ -142,6 +188,10 @@ main {
 
     &__item {
       width: 100%;
+
+      @media (max-width: $mobile-max-width) {
+        width: unset;
+      }
     }
 
     &__logo {
@@ -165,10 +215,6 @@ main {
 
     &__wrapper {
       position: relative;
-
-      @media (max-width: $mobile-max-width) {
-        display: none;
-      }
 
       &::before {
         position: absolute;
@@ -364,6 +410,35 @@ main {
   }
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+
+  button {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    &.pagination__active {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+  }
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -396,11 +471,15 @@ main {
     min-height: 33%;
     background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(2px);
-    padding: 14px 16px 12px;
+    padding: 16px 16px 8px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 8px;
+
+    @media (max-width: $mobile-max-width) {
+      padding: 8px 8px 0;
+    }
   }
 
   &__main {
@@ -442,6 +521,11 @@ main {
   &:hover &__extra {
     max-height: 200px;
     opacity: 1;
+
+    @media (max-width: $mobile-max-width) {
+      max-height: 0;
+      opacity: 0;
+    }
   }
 
   &__description {
@@ -516,6 +600,16 @@ main {
     }
   }
 
+  &__actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__wishlist {
+    height: 34px;
+    cursor: pointer;
+  }
+
   &__description {
     font-size: 18px;
     line-height: 170%;
@@ -554,6 +648,11 @@ main {
 .hero-banner {
   width: calc(100% + 160px);
   margin: 0 -80px;
+
+  @media (max-width: $mobile-max-width) {
+    width: calc(100% + 64px);
+    margin: 0 -32px;
+  }
 
   &__img {
     width: 100%;
