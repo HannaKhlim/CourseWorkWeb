@@ -18,13 +18,18 @@ const clearRadioSelection = (form) => {
 
 const initializeHeaderHandlers = () => {
   const handleRadioSelect = (event) => {
-    const formGender = document.querySelector("#gender-selection");
-    const formCategory = document.querySelector("#category-selection");
-
     const clickedRadio = event.target;
     const parentForm = clickedRadio.closest("form");
     clearRadioSelection(parentForm);
     clickedRadio.checked = true;
+
+    const isOverlay = !!clickedRadio.closest(".mobile-menu-overlay");
+    const formGender = document.querySelector(
+      isOverlay ? "#overlay-gender-selection" : "#gender-selection",
+    );
+    const formCategory = document.querySelector(
+      isOverlay ? "#overlay-category-selection" : "#category-selection",
+    );
 
     const selectedGender = formGender.querySelector(
       'input[type="radio"]:checked',
@@ -46,19 +51,27 @@ const initializeHeaderHandlers = () => {
 };
 
 const initializeDefaultSelections = () => {
-  clearRadioSelection(document.querySelector("#gender-selection"));
-  clearRadioSelection(document.querySelector("#category-selection"));
+  const allGenderForms = document.querySelectorAll(
+    "#gender-selection, #overlay-gender-selection",
+  );
+  const allCategoryForms = document.querySelectorAll(
+    "#category-selection, #overlay-category-selection",
+  );
+
+  allGenderForms.forEach(clearRadioSelection);
+  allCategoryForms.forEach(clearRadioSelection);
+
   const defaultGender = getSelectedGender();
   const defaultCategory = getSelectedCategory();
 
-  const genderRadio = document.querySelector(
-    `#gender-selection input[value="${defaultGender}"]`,
-  );
-  const categoryRadio = document.querySelector(
-    `#category-selection input[value="${defaultCategory}"]`,
-  );
-  if (genderRadio) genderRadio.checked = true;
-  if (categoryRadio) categoryRadio.checked = true;
+  allGenderForms.forEach((form) => {
+    const r = form.querySelector(`input[value="${defaultGender}"]`);
+    if (r) r.checked = true;
+  });
+  allCategoryForms.forEach((form) => {
+    const r = form.querySelector(`input[value="${defaultCategory}"]`);
+    if (r) r.checked = true;
+  });
 };
 
 const initSearchHandlers = () => {
@@ -91,6 +104,20 @@ const initHeader = () => {
   document
     .getElementById("clear-storage")
     .addEventListener("click", clearStorage);
+
+  document
+    .getElementById("overlay-clear-storage")
+    .addEventListener("click", clearStorage);
+
+  document
+    .querySelector(".header-bottom-mobile__menu")
+    .addEventListener("click", () => {
+      document.getElementById("mobile-menu-overlay").classList.add("open");
+    });
+
+  document.getElementById("mobile-menu-close").addEventListener("click", () => {
+    document.getElementById("mobile-menu-overlay").classList.remove("open");
+  });
 };
 
 fetch("/src/components/header.html")

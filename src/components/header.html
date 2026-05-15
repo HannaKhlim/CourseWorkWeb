@@ -80,6 +80,125 @@
       />
     </div>
   </div>
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+    <div class="mobile-menu-overlay__top">
+      <img
+        id="mobile-menu-close"
+        src="/public/icons/close.svg"
+        alt="Close Menu"
+        class="mobile-menu-overlay__close"
+      />
+      <div class="mobile-menu-overlay__profile">
+        <div class="header-profile__item">
+          <img
+            src="/public/icons/enter.png"
+            alt="Login"
+            class="header-profile__icon"
+            onclick="navigateTo('/login')"
+          />
+        </div>
+        <div class="header-profile__item">
+          <img
+            src="/public/icons/heart.png"
+            alt="Favorites"
+            class="header-profile__icon"
+            id="overlay-clear-storage"
+          />
+        </div>
+        <div class="header-profile__item">
+          <img
+            src="/public/icons/cart.svg"
+            alt="Cart"
+            class="header-profile__icon"
+            onclick="navigateTo('/checkout')"
+          />
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-menu-overlay__nav">
+      <form
+        id="overlay-gender-selection"
+        class="header-navigation__item mobile-menu-overlay__genders"
+      >
+        <input
+          class="header-navigation__option"
+          type="radio"
+          id="overlay-women"
+          value="women"
+        />
+        <label for="overlay-women" class="header-navigation__option-label"
+          >{{genders.women}}</label
+        >
+        <input
+          class="header-navigation__option"
+          type="radio"
+          id="overlay-men"
+          value="men"
+        />
+        <label for="overlay-men" class="header-navigation__option-label"
+          >{{genders.men}}</label
+        >
+        <input
+          class="header-navigation__option"
+          type="radio"
+          id="overlay-kids"
+          value="kids"
+        />
+        <label for="overlay-kids" class="header-navigation__option-label"
+          >{{genders.kids}}</label
+        >
+      </form>
+      <form
+        id="overlay-category-selection"
+        class="header-navigation__item mobile-menu-overlay__categories"
+      >
+        <input
+          class="header-navigation__option"
+          type="radio"
+          id="overlay-clothes"
+          value="clothes"
+        />
+        <label for="overlay-clothes" class="header-navigation__option-label"
+          >{{categories.clothes}}</label
+        >
+        <input
+          class="header-navigation__option"
+          type="radio"
+          id="overlay-shoes"
+          value="shoes"
+        />
+        <label for="overlay-shoes" class="header-navigation__option-label"
+          >{{categories.shoes}}</label
+        >
+        <input
+          class="header-navigation__option"
+          type="radio"
+          id="overlay-accessories"
+          value="accessories"
+        />
+        <label for="overlay-accessories" class="header-navigation__option-label"
+          >{{categories.accessories}}</label
+        >
+        <input
+          class="header-navigation__option"
+          type="radio"
+          id="overlay-underwear"
+          value="underwear"
+        />
+        <label for="overlay-underwear" class="header-navigation__option-label"
+          >{{categories.underwear}}</label
+        >
+      </form>
+    </nav>
+    <div class="mobile-menu-overlay__logo">
+      <img
+        src="/public/logos/logo.png"
+        alt="DEEPMAG"
+        class="header-bottom__logo"
+        onclick="navigateTo('/')"
+      />
+    </div>
+  </div>
   <div class="header-bottom">
     <div class="header-bottom__item">
       <img

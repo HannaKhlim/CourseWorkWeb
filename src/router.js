@@ -84,6 +84,7 @@ const route = async () => {
 export const navigateTo = (route) => {
   window.history.pushState(null, "", route);
   window.dispatchEvent(new Event("popstate"));
+  document.getElementById("mobile-menu-overlay").classList.remove("open");
 };
 
 window.navigateTo = navigateTo;

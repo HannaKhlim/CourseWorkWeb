@@ -35,11 +35,8 @@ process.on("SIGINT", () => {
 
 server.on("error", (err) => {
   if (err.code === "EADDRINUSE") {
-    console.error(`Port ${PORT} is already in use. Retrying in 1 second...`);
-    setTimeout(() => {
-      server.close();
-      server.listen(PORT);
-    }, 1000);
+    console.error(`Port ${PORT} is already in use.`);
+    process.exit(1);
   } else {
     throw err;
   }

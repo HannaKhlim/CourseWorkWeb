@@ -7,7 +7,7 @@ import { createProductCard } from "./productCard.js";
 const PAGE_SIZE = 10;
 
 export const initProductsPage = async () => {
-  const grid = document.getElementById("products-grid");
+  const grid = document.querySelector(".products-grid");
   if (!grid) return;
 
   try {
