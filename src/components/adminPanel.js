@@ -13,13 +13,14 @@ const PRODUCT_TEMPLATE = {
   origin: { ru: "Страна", en: "Country" },
   image: "https://example.com/image.jpg",
   suggestions: [],
+  createdAt: new Date(),
 };
 
 const ORDER_TEMPLATE = {
   userId: 1,
   productIds: [1000, 1001],
   status: "pending",
-  createdAt: new Date().toISOString(),
+  createdAt: new Date(),
 };
 
 const RESOURCES = [
