@@ -2,6 +2,7 @@ import { selectGender } from "./utils/storageService.js";
 import { registerTemplate, translate } from "./utils/i18n.js";
 import { initProductsPage } from "./components/productsGrid.js";
 import { initProductDetails } from "./components/productDetails.js";
+import { initAdminPanel } from "./components/adminPanel.js";
 
 const mainContent = document.getElementById("main-content");
 const loader = document.getElementById("loader");
@@ -10,11 +11,13 @@ const pages = {
   "/": "/src/pages/home.html",
   "/products": "/src/pages/products.html",
   "/product/:id": "/src/pages/productDetails.html",
+  "/admin": "/src/pages/admin.html",
 };
 
 const pageInits = {
   "/products": () => initProductsPage(),
   "/product/:id": ({ id }) => initProductDetails(id),
+  "/admin": () => initAdminPanel(),
 };
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
