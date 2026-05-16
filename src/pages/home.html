@@ -34,3 +34,28 @@
 </section>
 
 <div id="new-arrivals-carousel"></div>
+
+<section class="about">
+  <h2 class="about__header">{{about.header}}</h2>
+  <div class="about__container">
+    <img src="/public/photos/about.png" alt="About Us" class="about__img" />
+    <div class="about-text">
+      <h3 class="about-text__header">{{about.textHeader}}</h3>
+      <p class="about-text__paragraph">{{about.textParagraph}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe-module">
+  <h2 class="subscribe-module__header">{{subscribeModule.header}}</h2>
+  <form id="subscribe-form" class="subscribe-module__form">
+    <input
+      type="email"
+      name="email"
+      placeholder="{{subscribeModule.emailPlaceholder}}"
+      required
+      class="subscribe-module__input input"
+    />
+    <button type="submit" class="btn-primary">{{subscribeModule.cta}}</button>
+  </form>
+</section>

@@ -13,6 +13,18 @@ const translations = {
       accessories: "Сумки и аксессуары",
       underwear: "Нижнее бельё",
     },
+    about: {
+      header: "О компании",
+      textHeader: "DEEPMAG",
+      textParagraph:
+        "— Cеть магазинов мировых брендов ARMANI EXCHANGE, GANT, CALVIN KLEIN, TOMMY HILFIGER, GEOX. Более 10 лет мы являемся официальными представителями всемирно известных брендов в Тюмени, законодателями ярких трендов и модных тенденций.",
+    },
+    subscribeModule: {
+      header:
+        "Подпишитесь на рассылку и получите <strong>10%</strong> скидку на Ваш заказ",
+      emailPlaceholder: "Эл. почта",
+      cta: "ПОДПИСАТЬСЯ",
+    },
     header: {
       changeTheme: "Сменить тему",
       accessibility: "Слабовидящим",
@@ -99,6 +111,18 @@ const translations = {
       shoes: "Shoes",
       accessories: "Bags & Accessories",
       underwear: "Underwear",
+    },
+    about: {
+      header: "About Us",
+      textHeader: "DEEPMAG",
+      textParagraph:
+        "— A chain of stores of world brands ARMANI EXCHANGE, GANT, CALVIN KLEIN, TOMMY HILFIGER, GEOX. For more than 10 years we have been official representatives of world-famous brands in Tyumen, setting bright trends and fashion trends.",
+    },
+    subscribeModule: {
+      header:
+        "Subscribe to newsletter and get <strong>10%</strong> off your order",
+      emailPlaceholder: "Email",
+      cta: "SUBSCRIBE",
     },
     header: {
       changeTheme: "Change Theme",
