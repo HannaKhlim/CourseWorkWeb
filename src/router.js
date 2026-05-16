@@ -1,5 +1,6 @@
 import { selectGender } from "./utils/storageService.js";
 import { registerTemplate, translate } from "./utils/i18n.js";
+import { initHomePage } from "./components/homePage.js";
 import { initProductsPage } from "./components/productsGrid.js";
 import { initProductDetails } from "./components/productDetails.js";
 import { initAdminPanel } from "./components/adminPanel.js";
@@ -16,6 +17,7 @@ const pages = {
 };
 
 const pageInits = {
+  "/": () => initHomePage(),
   "/products": () => initProductsPage(),
   "/product/:id": ({ id }) => initProductDetails(id),
   "/admin": () => initAdminPanel(),

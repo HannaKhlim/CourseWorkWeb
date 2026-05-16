@@ -2,6 +2,7 @@ import { navigateTo } from "../router.js";
 import { registerTemplate, translate } from "../utils/i18n.js";
 import { getSelectedLanguage } from "../utils/storageService.js";
 import { productsApi } from "../utils/api.js";
+import { createCarousel } from "./productCarousel.js";
 
 export const initProductDetails = async (id) => {
   const selectedLanguage = getSelectedLanguage();
@@ -58,6 +59,28 @@ export const initProductDetails = async (id) => {
 
     registerTemplate("product-details", html);
     container.innerHTML = translate(html);
+
+    if (product.suggestions?.length) {
+      const suggestionProducts = await Promise.all(
+        product.suggestions.map((id) =>
+          productsApi.getById(String(id)).catch(() => null),
+        ),
+      );
+      const validProducts = suggestionProducts.filter(Boolean);
+      if (validProducts.length) {
+        const suggestionsContainer = document.getElementById(
+          "suggestions-carousel",
+        );
+        if (suggestionsContainer) {
+          suggestionsContainer.appendChild(
+            createCarousel(
+              translate("{{productDetails.suggestions}}"),
+              validProducts,
+            ),
+          );
+        }
+      }
+    }
   } catch (error) {
     console.error("Error loading product detail:", error);
   }

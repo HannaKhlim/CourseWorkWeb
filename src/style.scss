@@ -2,6 +2,7 @@
   --primary-bg: #ffffff;
   --primary-text: #1a1a1a;
   --secondary-bg: #f3f3f3;
+  --secondary-text: #525252;
   --overlay-bg: #fafafa;
 }
 
@@ -9,6 +10,7 @@
   --primary-bg: #1a1a1a;
   --primary-text: #f5f5f5;
   --secondary-bg: #333333;
+  --secondary-text: #cccccc;
   --overlay-bg: #1a1a1a;
 }
 
@@ -40,10 +42,14 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   padding: 32px 80px 50px;
 
   @media (max-width: $mobile-max-width) {
     padding: 20px 32px 32px;
+    gap: 20px;
   }
 }
 
@@ -84,6 +90,38 @@ main {
   padding: 8px;
   font-size: 18px;
   font-weight: 700;
+}
+
+%outline-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border: 1px solid var(--primary-text);
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.btn-outline {
+  @extend %outline-btn;
+
+  &--active {
+    @extend %outline-btn;
+    background: var(--primary-text);
+    color: var(--primary-bg);
+  }
 }
 
 .btn-primary {
@@ -493,25 +531,9 @@ main {
   gap: 8px;
   margin-top: 24px;
 
-  button {
-    min-width: 36px;
-    height: 36px;
-    padding: 0 8px;
-    border: 1px solid #ccc;
-    background: #fff;
-    cursor: pointer;
-    font-size: 14px;
-
-    &:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-
-    &.pagination--active {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-    }
+  &-pages {
+    display: flex;
+    gap: 8px;
   }
 }
 
@@ -661,7 +683,7 @@ main {
 
   &__brand {
     font-size: 24px;
-    color: #777;
+    color: var(--secondary-text);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -689,7 +711,7 @@ main {
   &__description {
     font-size: 18px;
     line-height: 170%;
-    color: #525252;
+    color: var(--secondary-text);
     letter-spacing: 0.72px;
   }
 
@@ -704,7 +726,7 @@ main {
 
     &-value {
       font-size: 18px;
-      color: #525252;
+      color: var(--secondary-text);
     }
   }
 
@@ -737,7 +759,6 @@ main {
 
 .genders {
   display: flex;
-  padding: 50px 0;
   justify-content: space-between;
   gap: 20px;
 
@@ -762,10 +783,72 @@ main {
 
   &__label {
     writing-mode: sideways-lr;
-    color: #525252;
     font-size: 32px;
     font-weight: 700;
     flex-shrink: 0;
+  }
+}
+
+.product-carousel {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    @media (max-width: $mobile-max-width) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+
+    @media (max-width: $mobile-max-width) {
+      font-size: 20px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 100%;
+      background: linear-gradient(to right, transparent, var(--primary-bg));
+      pointer-events: none;
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-tile {
+      flex: 0 0 240px;
+      width: 240px;
+
+      @media (max-width: $mobile-max-width) {
+        flex: 0 0 160px;
+        width: 160px;
+      }
+    }
   }
 }
 

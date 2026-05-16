@@ -74,6 +74,9 @@ const translations = {
     productCard: {
       selectSize: "Выбрать размер",
     },
+    newArrivals: {
+      title: "Новинки этого сезона",
+    },
     productDetails: {
       id: "Артикул",
       materials: "Материалы",
@@ -82,6 +85,7 @@ const translations = {
       sizes: "Размеры",
       addToCart: "ДОБАВИТЬ В КОРЗИНУ",
       addToWishlist: "Добавить в избранное",
+      suggestions: "Вам может понравиться",
     },
   },
   en: {
@@ -157,6 +161,9 @@ const translations = {
     productCard: {
       selectSize: "Select Size",
     },
+    newArrivals: {
+      title: "New Arrivals",
+    },
     productDetails: {
       id: "Article",
       materials: "Materials",
@@ -165,6 +172,7 @@ const translations = {
       sizes: "Sizes",
       addToCart: "ADD TO CART",
       addToWishlist: "Add to Wishlist",
+      suggestions: "You may also like",
     },
   },
 };

@@ -46,7 +46,8 @@ export const initProductsPage = async () => {
       for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
         btn.textContent = i;
-        if (i === currentPage) btn.classList.add("pagination--active");
+        btn.className =
+          i === currentPage ? "btn-outline--active" : "btn-outline";
         btn.addEventListener("click", () => {
           currentPage = i;
           render();
