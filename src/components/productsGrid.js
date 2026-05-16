@@ -11,41 +11,37 @@ export const initProductsPage = async () => {
   const grid = document.querySelector(".products-grid");
   if (!grid) return;
 
-  try {
-    const selectedCategory = getSelectedCategory();
-    const selectedGender = getSelectedGender();
-    const products = await productsApi.getAll({
-      gender: selectedGender,
-      category: selectedCategory,
-    });
+  const selectedCategory = getSelectedCategory();
+  const selectedGender = getSelectedGender();
+  let currentPage = 1;
 
-    let currentPage = 1;
-    const totalPages = Math.ceil(products.length / PAGE_SIZE);
+  const prev = document.getElementById("pagination-prev");
+  const next = document.getElementById("pagination-next");
+  const pagesContainer = document.getElementById("pagination-pages");
 
-    const prev = document.getElementById("pagination-prev");
-    const next = document.getElementById("pagination-next");
-    const pagesContainer = document.getElementById("pagination-pages");
+  prev.addEventListener("click", () => {
+    currentPage--;
+    render();
+  });
+  next.addEventListener("click", () => {
+    currentPage++;
+    render();
+  });
 
-    prev.addEventListener("click", () => {
-      currentPage--;
-      render();
-    });
-    next.addEventListener("click", () => {
-      currentPage++;
-      render();
-    });
+  const render = async () => {
+    try {
+      const { data: products, last: totalPages } = await productsApi.getAll({
+        gender: selectedGender,
+        category: selectedCategory,
+        _page: currentPage,
+        _per_page: PAGE_SIZE,
+      });
 
-    const render = () => {
-      const start = (currentPage - 1) * PAGE_SIZE;
-      const pageItems = products.slice(start, start + PAGE_SIZE);
-      grid.innerHTML = pageItems.map(createProductCard).join("");
-      renderPagination();
-    };
+      grid.innerHTML = products.map(createProductCard).join("");
 
-    const renderPagination = () => {
-      pagesContainer.innerHTML = "";
       prev.disabled = currentPage === 1;
       next.disabled = currentPage === totalPages;
+      pagesContainer.innerHTML = "";
 
       for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
@@ -58,10 +54,10 @@ export const initProductsPage = async () => {
         });
         pagesContainer.appendChild(btn);
       }
-    };
+    } catch (error) {
+      console.error("Error loading products:", error);
+    }
+  };
 
-    render();
-  } catch (error) {
-    console.error("Error loading products:", error);
-  }
+  render();
 };

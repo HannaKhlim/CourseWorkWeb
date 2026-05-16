@@ -5,12 +5,13 @@ import { initProductDetails } from "./components/productDetails.js";
 import { initAdminPanel } from "./components/adminPanel.js";
 
 const mainContent = document.getElementById("main-content");
-const loader = document.getElementById("loader");
 
 const pages = {
   "/": "/src/pages/home.html",
   "/products": "/src/pages/products.html",
   "/product/:id": "/src/pages/productDetails.html",
+  "/checkout": "/src/pages/checkout.html",
+  "/login": "/src/pages/login.html",
   "/admin": "/src/pages/admin.html",
 };
 
@@ -19,8 +20,6 @@ const pageInits = {
   "/product/:id": ({ id }) => initProductDetails(id),
   "/admin": () => initAdminPanel(),
 };
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const renderNotFound = async () => {
   try {
@@ -49,8 +48,6 @@ const matchRoute = (path) => {
 };
 
 const route = async () => {
-  loader.classList.add("visible");
-  await sleep(500);
   const path = window.location.pathname;
   const searchParams = new URLSearchParams(window.location.search);
   if (searchParams.has("gender")) {
@@ -80,8 +77,6 @@ const route = async () => {
 
   const init = match && pageInits[match.pattern];
   if (init) init(match.params);
-
-  loader.classList.remove("visible");
 };
 
 export const navigateTo = (route) => {

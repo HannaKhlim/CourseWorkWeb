@@ -1,10 +1,16 @@
 const BASE_URL = "http://localhost:3001";
+const loader = document.getElementById("loader");
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const request = async (path, options = {}) => {
+  loader.classList.add("visible");
+  await sleep(500);
   const response = await fetch(`${BASE_URL}${path}`, {
     headers: { "Content-Type": "application/json" },
     ...options,
   });
+  loader.classList.remove("visible");
   if (!response.ok) throw new Error(`API error: ${response.status} ${path}`);
   return response.json();
 };
