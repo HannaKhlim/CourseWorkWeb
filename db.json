@@ -2,11 +2,10 @@
   "products": [
     {
       "id": "1000",
-      "createdAt": 1767225600000,
       "price": 3400,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["S", "M", "L"],
+      "sizes": "S,M,L",
       "brand": "LOVE REPUBLIC",
       "name": {
         "ru": "Юбка миди",
@@ -29,14 +28,15 @@
         "ru": "Китай",
         "en": "China"
       },
-      "suggestions": [1001, 1002]
+      "suggestions": [1001, 1002],
+      "createdAt": 1767225600000
     },
     {
       "id": "1001",
       "price": 5990,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L"],
+      "sizes": "XS,S,M,L",
       "brand": "ZARA",
       "name": {
         "ru": "Платье в цветочный принт",
@@ -67,7 +67,7 @@
       "price": 2990,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "H&M",
       "name": {
         "ru": "Белая блузка",
@@ -98,7 +98,7 @@
       "price": 4490,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["24", "26", "28", "30", "32"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Levi's",
       "name": {
         "ru": "Джинсы скинни",
@@ -129,7 +129,7 @@
       "price": 14990,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L"],
+      "sizes": "XS,S,M,L",
       "brand": "Massimo Dutti",
       "name": {
         "ru": "Шерстяное пальто",
@@ -160,7 +160,7 @@
       "price": 3990,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "COS",
       "name": {
         "ru": "Вязаный свитер",
@@ -191,7 +191,7 @@
       "price": 1490,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Uniqlo",
       "name": {
         "ru": "Базовая футболка",
@@ -222,7 +222,7 @@
       "price": 7490,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L"],
+      "sizes": "XS,S,M,L",
       "brand": "Mango",
       "name": {
         "ru": "Пиджак",
@@ -253,7 +253,7 @@
       "price": 4990,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L"],
+      "sizes": "XS,S,M,L",
       "brand": "& Other Stories",
       "name": {
         "ru": "Широкие брюки",
@@ -284,7 +284,7 @@
       "price": 2490,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L"],
+      "sizes": "XS,S,M,L",
       "brand": "befree",
       "name": {
         "ru": "Джинсовые шорты",
@@ -315,7 +315,7 @@
       "price": 4290,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": "S,M,L,XL",
       "brand": "LOVE REPUBLIC",
       "name": {
         "ru": "Оверсайз кардиган",
@@ -346,7 +346,7 @@
       "price": 3290,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Nike",
       "name": {
         "ru": "Спортивные леггинсы",
@@ -377,7 +377,7 @@
       "price": 5490,
       "gender": "women",
       "category": "clothes",
-      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Adidas",
       "name": {
         "ru": "Худи на молнии",
@@ -408,7 +408,7 @@
       "price": 4990,
       "gender": "men",
       "category": "clothes",
-      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "sizes": "S,M,L,XL",
       "brand": "Tommy Hilfiger",
       "name": {
         "ru": "Оксфордская рубашка",
@@ -439,7 +439,7 @@
       "price": 3790,
       "gender": "men",
       "category": "clothes",
-      "sizes": ["28", "30", "32", "34", "36"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "H&M",
       "name": {
         "ru": "Чинос слим фит",
@@ -470,7 +470,7 @@
       "price": 8990,
       "gender": "women",
       "category": "accessories",
-      "sizes": ["One Size"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "ZARA",
       "name": {
         "ru": "Кожаная сумка-шопер",
@@ -501,7 +501,7 @@
       "price": 6490,
       "gender": "men",
       "category": "accessories",
-      "sizes": ["One Size"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Fjällräven",
       "name": {
         "ru": "Городской рюкзак",
@@ -532,7 +532,7 @@
       "price": 8990,
       "gender": "women",
       "category": "accessories",
-      "sizes": ["One Size"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Mango",
       "name": {
         "ru": "Шёлковый платок",
@@ -563,7 +563,7 @@
       "price": 4290,
       "gender": "men",
       "category": "accessories",
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": "S,M,L,XL",
       "brand": "Hugo Boss",
       "name": {
         "ru": "Кожаный ремень",
@@ -594,7 +594,7 @@
       "price": 7490,
       "gender": "women",
       "category": "shoes",
-      "sizes": ["36", "37", "38", "39", "40"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Steve Madden",
       "name": {
         "ru": "Туфли на шпильке",
@@ -625,7 +625,7 @@
       "price": 5990,
       "gender": "women",
       "category": "shoes",
-      "sizes": ["36", "37", "38", "39", "40", "41"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Adidas",
       "name": {
         "ru": "Белые кроссовки",
@@ -656,7 +656,7 @@
       "price": 3490,
       "gender": "women",
       "category": "underwear",
-      "sizes": ["XS", "S", "M", "L"],
+      "sizes": "XS,S,M,L",
       "brand": "Victoria's Secret",
       "name": {
         "ru": "Кружевной бралет",
@@ -687,7 +687,7 @@
       "price": 2990,
       "gender": "women",
       "category": "underwear",
-      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Calvin Klein",
       "name": {
         "ru": "Хлопковые трусы-бикини",
@@ -718,7 +718,7 @@
       "price": 8990,
       "gender": "men",
       "category": "shoes",
-      "sizes": ["40", "41", "42", "43", "44", "45"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Nike",
       "name": {
         "ru": "Кожаные кроссовки",
@@ -749,7 +749,7 @@
       "price": 9490,
       "gender": "men",
       "category": "shoes",
-      "sizes": ["40", "41", "42", "43", "44"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Clarks",
       "name": {
         "ru": "Дерби из кожи",
@@ -780,7 +780,7 @@
       "price": 2490,
       "gender": "men",
       "category": "underwear",
-      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "sizes": "S,M,L,XL",
       "brand": "Calvin Klein",
       "name": {
         "ru": "Боксеры-брифы",
@@ -811,7 +811,7 @@
       "price": 1990,
       "gender": "men",
       "category": "underwear",
-      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "sizes": "S,M,L,XL",
       "brand": "Tommy Hilfiger",
       "name": {
         "ru": "Боксеры классические",
@@ -842,7 +842,7 @@
       "price": 3490,
       "gender": "kids",
       "category": "clothes",
-      "sizes": ["92", "98", "104", "110", "116"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "GAP Kids",
       "name": {
         "ru": "Детское худи",
@@ -873,7 +873,7 @@
       "price": 4290,
       "gender": "kids",
       "category": "clothes",
-      "sizes": ["92", "98", "104", "110", "116", "122"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Zara Kids",
       "name": {
         "ru": "Джинсовый комбинезон",
@@ -904,7 +904,7 @@
       "price": 2990,
       "gender": "kids",
       "category": "shoes",
-      "sizes": ["22", "23", "24", "25", "26", "27"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Converse",
       "name": {
         "ru": "Детские кеды",
@@ -935,7 +935,7 @@
       "price": 3490,
       "gender": "kids",
       "category": "shoes",
-      "sizes": ["28", "29", "30", "31", "32", "33"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Geox",
       "name": {
         "ru": "Туфли Мэри Джейн",
@@ -966,7 +966,7 @@
       "price": 1990,
       "gender": "kids",
       "category": "accessories",
-      "sizes": ["One Size"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Samsonite",
       "name": {
         "ru": "Детский рюкзак",
@@ -997,7 +997,7 @@
       "price": 990,
       "gender": "kids",
       "category": "accessories",
-      "sizes": ["One Size"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Nike Kids",
       "name": {
         "ru": "Детская бейсболка",
@@ -1028,7 +1028,7 @@
       "price": 1290,
       "gender": "kids",
       "category": "underwear",
-      "sizes": ["92", "98", "104", "110", "116"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "Marks & Spencer",
       "name": {
         "ru": "Хлопковая майка",
@@ -1059,7 +1059,7 @@
       "price": 1490,
       "gender": "kids",
       "category": "underwear",
-      "sizes": ["92", "98", "104", "110", "116", "122"],
+      "sizes": "XS,S,M,L,XL",
       "brand": "H&M Kids",
       "name": {
         "ru": "Набор трусов в принт",

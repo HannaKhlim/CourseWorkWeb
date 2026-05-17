@@ -4,7 +4,7 @@ const PRODUCT_TEMPLATE = {
   price: 1999,
   gender: "women",
   category: "clothes",
-  sizes: ["S", "M", "L"],
+  sizes: "S,M,L",
   brand: "Brand Name",
   name: { ru: "Название", en: "Name" },
   description: { ru: "Описание", en: "Description" },

@@ -11,8 +11,9 @@ const pages = {
   "/": "/src/pages/home.html",
   "/products": "/src/pages/products.html",
   "/product/:id": "/src/pages/productDetails.html",
-  "/checkout": "/src/pages/checkout.html",
+  "/login": "/src/pages/login.html",
   "/profile": "/src/pages/profile.html",
+  "/checkout": "/src/pages/checkout.html",
   "/admin": "/src/pages/admin.html",
 };
 

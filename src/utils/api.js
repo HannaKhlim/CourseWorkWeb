@@ -1,7 +1,6 @@
 const BASE_URL = "http://localhost:3001";
 const loader = document.getElementById("loader");
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+import { sleep } from "./timers.js";
 
 const request = async (path, options = {}) => {
   loader.classList.add("visible");

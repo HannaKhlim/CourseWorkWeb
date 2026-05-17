@@ -29,7 +29,7 @@ export const initProductDetails = async (id) => {
         <p class="product-details__price">${price} ₽</p>
         <div class="product-details__actions">
           <button class="product-details__btn btn-primary">{{productDetails.addToCart}}</button>
-          <img src="/public/icons/heart.svg" alt="{{productDetails.addToWishlist}}" class="product-details__wishlist" />
+          <div class="wishlist-icon"></div>
         </div>
         <p class="product-details__description">${product.description[selectedLanguage]}</p>
         <div class="product-details__materials">

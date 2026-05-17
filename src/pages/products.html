@@ -1,8 +1,83 @@
 <section id="products">
-  <div class="products-grid"></div>
-  <div id="pagination" class="pagination">
-    <button id="pagination-prev" class="btn-outline">←</button>
-    <div id="pagination-pages" class="pagination-pages"></div>
-    <button id="pagination-next" class="btn-outline">→</button>
+  <div class="products-layout">
+    <aside class="products-filters">
+      <div class="filter-group">
+        <button class="filter-group__trigger">
+          <span class="filter-group__label">{{productsControls.sort}}</span>
+          <img src="/public/icons/arrow.svg" class="filter-group__chevron" />
+        </button>
+        <div class="filter-group__panel">
+          <label class="filter-group__option">
+            <input type="radio" name="sort" value="newest" checked />
+            <span>{{productsControls.newest}}</span>
+          </label>
+          <label class="filter-group__option">
+            <input type="radio" name="sort" value="oldest" />
+            <span>{{productsControls.oldest}}</span>
+          </label>
+          <label class="filter-group__option">
+            <input type="radio" name="sort" value="priceDesc" />
+            <span>{{productsControls.mostExpensive}}</span>
+          </label>
+          <label class="filter-group__option">
+            <input type="radio" name="sort" value="priceAsc" />
+            <span>{{productsControls.leastExpensive}}</span>
+          </label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <button class="filter-group__trigger">
+          <span class="filter-group__label">{{productsControls.brand}}</span>
+          <img src="/public/icons/arrow.svg" class="filter-group__chevron" />
+        </button>
+        <div class="filter-group__panel" id="brand-panel"></div>
+      </div>
+      <div class="filter-group">
+        <button class="filter-group__trigger">
+          <span class="filter-group__label">{{productsControls.color}}</span>
+          <img src="/public/icons/arrow.svg" class="filter-group__chevron" />
+        </button>
+        <div class="filter-group__panel" id="color-panel"></div>
+      </div>
+      <div class="filter-group">
+        <button class="filter-group__trigger">
+          <span class="filter-group__label">{{productsControls.size}}</span>
+          <img src="/public/icons/arrow.svg" class="filter-group__chevron" />
+        </button>
+        <div class="filter-group__panel" id="size-panel">
+          <label class="filter-group__option">
+            <input type="checkbox" name="size" value="XS" />
+            <span>XS</span>
+          </label>
+          <label class="filter-group__option">
+            <input type="checkbox" name="size" value="S" />
+            <span>S</span>
+          </label>
+          <label class="filter-group__option">
+            <input type="checkbox" name="size" value="M" />
+            <span>M</span>
+          </label>
+          <label class="filter-group__option">
+            <input type="checkbox" name="size" value="L" />
+            <span>L</span>
+          </label>
+          <label class="filter-group__option">
+            <input type="checkbox" name="size" value="XL" />
+            <span>XL</span>
+          </label>
+        </div>
+      </div>
+      <button class="products-filters__clear btn-secondary" id="clear-filters">
+        {{productsControls.clearFilters}}
+      </button>
+    </aside>
+    <div class="products-main">
+      <div class="products-grid"></div>
+      <div id="pagination" class="pagination">
+        <button id="pagination-prev" class="btn-outline">←</button>
+        <div id="pagination-pages" class="pagination-pages"></div>
+        <button id="pagination-next" class="btn-outline">→</button>
+      </div>
+    </div>
   </div>
 </section>
