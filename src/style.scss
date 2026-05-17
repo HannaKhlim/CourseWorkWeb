@@ -311,7 +311,8 @@ main {
   }
 
   &-navigation {
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
     align-items: center;
     height: 130px;
     padding: 0px 80px;
@@ -326,6 +327,10 @@ main {
       display: flex;
       gap: 20px;
       width: 100%;
+      justify-content: center;
+      &:first-child {
+        justify-content: flex-start;
+      }
     }
 
     &__categories {
