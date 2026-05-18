@@ -139,9 +139,10 @@ main {
 
 .btn-secondary {
   @extend %btn-common;
-  color: #525252;
-  background-color: #fff;
-  border: 3px solid #525252;
+  color: #000000;
+  background-color: #e5e5e5;
+  border: 3px solid #e5e5e5;
+  font-weight: 400;
 }
 
 .input {
