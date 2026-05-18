@@ -3,7 +3,7 @@ import { registerTemplate, translate } from "../utils/i18n.js";
 import { getSelectedLanguage } from "../utils/storageService.js";
 import { productsApi } from "../utils/api.js";
 import { createCarousel } from "./productCarousel.js";
-import { checkIfInWishlist } from "../utils/wishlistService.js";
+import { checkIfInWishlist, toggleFavorite } from "../utils/wishlistService.js";
 
 export const initProductDetails = async (id) => {
   const selectedLanguage = getSelectedLanguage();
@@ -30,7 +30,7 @@ export const initProductDetails = async (id) => {
         <p class="product-details__price">${price} ₽</p>
         <div class="product-details__actions">
           <button class="product-details__btn btn-primary">{{productDetails.addToCart}}</button>
-          <div class="wishlist-icon ${checkIfInWishlist(product.id) ? "wishlist-icon--added" : ""}" onclick="toggleFavorite(event, ${product.id})"></div>
+          <div class="wishlist-icon ${checkIfInWishlist(product.id) ? "wishlist-icon--added" : ""}"></div>
         </div>
         <p class="product-details__description">${product.description[selectedLanguage]}</p>
         <div class="product-details__materials">
@@ -60,6 +60,9 @@ export const initProductDetails = async (id) => {
 
     registerTemplate("product-details", html);
     container.innerHTML = translate(html);
+    container
+      .querySelector(".wishlist-icon")
+      .addEventListener("click", (event) => toggleFavorite(event, product.id));
 
     if (product.suggestions?.length) {
       const suggestionProducts = await Promise.all(

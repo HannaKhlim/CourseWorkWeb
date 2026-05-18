@@ -107,7 +107,6 @@ const route = async () => {
   if (init) init(match.params);
 };
 
-window.navigateTo = navigateTo;
 window.addEventListener("popstate", route);
 window.addEventListener("DOMContentLoaded", route);
 document.addEventListener("i18n:applied", () => {
@@ -117,6 +116,11 @@ document.addEventListener("i18n:applied", () => {
   if (init) init(match.params);
 });
 document.addEventListener("click", (event) => {
+  const navTarget = event.target.closest("[data-navigate]");
+  if (navTarget) {
+    navigateTo(navTarget.dataset.navigate);
+    return;
+  }
   const link = event.target.closest("a[data-link]");
   if (!link) return;
 

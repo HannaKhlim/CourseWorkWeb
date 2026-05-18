@@ -14,9 +14,7 @@ export const createCarousel = (title, products) => {
       </div>
     </div>
     <div class="product-carousel__wrapper">
-      <div class="product-carousel__track">
-        ${products.map(createProductCard).join("")}
-      </div>
+      <div class="product-carousel__track"></div>
     </div>
   `;
 
@@ -29,6 +27,8 @@ export const createCarousel = (title, products) => {
     nextBtn.disabled =
       track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
   };
+
+  products.forEach((product) => track.appendChild(createProductCard(product)));
 
   prevBtn.addEventListener("click", () => {
     track.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });

@@ -189,7 +189,7 @@ export const initProductsPage = async () => {
 
   const render = async () => {
     const { products, totalPages } = await getFilteredProducts();
-    grid.innerHTML = products.map(createProductCard).join("");
+    grid.replaceChildren(...products.map(createProductCard));
     renderPagination(totalPages);
   };
 

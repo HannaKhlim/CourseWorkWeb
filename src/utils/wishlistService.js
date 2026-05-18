@@ -33,5 +33,3 @@ export const toggleFavorite = async (event, productId) => {
     added ? "{{profile.wishlistAdded}}" : "{{profile.wishlistRemoved}}",
   );
 };
-
-window.toggleFavorite = toggleFavorite;

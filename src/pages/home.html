@@ -7,7 +7,7 @@
 </section>
 
 <section class="genders">
-  <div class="genders__item" onclick="navigateTo('/products?gender=women')">
+  <div class="genders__item" data-navigate="/products?gender=women">
     <span class="genders__label">{{genders.women}}</span>
     <img
       src="./public/photos/woman.png"
@@ -15,7 +15,7 @@
       class="genders__img"
     />
   </div>
-  <div class="genders__item" onclick="navigateTo('/products?gender=men')">
+  <div class="genders__item" data-navigate="/products?gender=men">
     <span class="genders__label">{{genders.men}}</span>
     <img
       src="./public/photos/man.png"
@@ -23,7 +23,7 @@
       class="genders__img"
     />
   </div>
-  <div class="genders__item" onclick="navigateTo('/products?gender=kids')">
+  <div class="genders__item" data-navigate="/products?gender=kids">
     <span class="genders__label">{{genders.kids}}</span>
     <img
       src="./public/photos/baby.png"

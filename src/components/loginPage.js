@@ -14,7 +14,7 @@ import {
   validateEmailAsync,
   setError,
   markField,
-} from "../utils/registerValidation.js";
+} from "../utils/registrationValidation.js";
 import { generatePassword, generateNickname } from "../utils/generators.js";
 import { hashPassword } from "../utils/crypto.js";
 

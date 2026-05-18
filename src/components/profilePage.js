@@ -32,11 +32,9 @@ export const initProfilePage = async () => {
     ).filter(Boolean);
     if (products.length) {
       const container = document.getElementById("profile-wishlist");
-      if (container) {
-        container.appendChild(
-          createCarousel(translate("{{profile.wishlistTitle}}"), products),
-        );
-      }
+      container.appendChild(
+        createCarousel(translate("{{profile.wishlistTitle}}"), products),
+      );
     }
   }
 };
