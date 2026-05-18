@@ -1,6 +1,6 @@
 import { registerTemplate, translate } from "../utils/i18n.js";
 import { getSelectedLanguage } from "../utils/storageService.js";
-import { navigateTo } from "../router.js";
+import { checkIfInWishlist, toggleFavorite } from "../utils/wishlistService.js";
 
 export const createProductCard = (product) => {
   const selectedLanguage = getSelectedLanguage();
@@ -13,6 +13,7 @@ export const createProductCard = (product) => {
       data-product-id="${product.id}"
     >
       <img src="${product.image}" alt="${product.name[selectedLanguage]}" class="product-tile__img" />
+      <div class="wishlist-icon product-tile__wishlist ${checkIfInWishlist(product.id) ? "wishlist-icon--added" : ""}" onclick="toggleFavorite(event, ${product.id})"></div>
       <div class="product-tile__overlay">
         <div class="product-tile__main">
           <h3 class="product-tile__name">${product.name[selectedLanguage]}</h3>

@@ -1,6 +1,9 @@
 import { getUserData, clearStorage } from "../utils/storageService.js";
+import { productsApi } from "../utils/api.js";
+import { createCarousel } from "./productCarousel.js";
+import { translate } from "../utils/i18n.js";
 
-export const initProfilePage = () => {
+export const initProfilePage = async () => {
   const user = getUserData();
 
   document.getElementById("profile-name").value = user.name ?? "";
@@ -19,4 +22,19 @@ export const initProfilePage = () => {
   document
     .getElementById("profile-logout")
     .addEventListener("click", clearStorage);
+
+  const wishlist = user.wishlist ?? [];
+  if (wishlist.length) {
+    const products = await Promise.all(
+      wishlist.map((id) => productsApi.getById(id).catch(() => null)),
+    ).filter(Boolean);
+    if (products.length) {
+      const container = document.getElementById("profile-wishlist");
+      if (container) {
+        container.appendChild(
+          createCarousel(translate("{{profile.wishlistTitle}}"), products),
+        );
+      }
+    }
+  }
 };

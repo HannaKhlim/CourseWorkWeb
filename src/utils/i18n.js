@@ -161,6 +161,9 @@ const translations = {
       title: "Профиль",
       logoutBtn: "ВЫЙТИ",
       adminBtn: "АДМИН",
+      wishlistTitle: "Избранное",
+      wishlistAdded: "Добавлено в избранное",
+      wishlistRemoved: "Удалено из избранного",
     },
   },
   en: {
@@ -323,6 +326,9 @@ const translations = {
       title: "Profile",
       logoutBtn: "LOGOUT",
       adminBtn: "ADMIN",
+      wishlistTitle: "Wishlist",
+      wishlistAdded: "Added to wishlist",
+      wishlistRemoved: "Removed from wishlist",
     },
   },
 };

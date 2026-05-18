@@ -1098,7 +1098,8 @@
       "dateOfBirth": "2006-09-12",
       "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
       "createdAt": 1779109619719,
-      "admin": true
+      "admin": true,
+      "wishlist": ["1012", "1011"]
     },
     {
       "id": "Y8L1spiVMrg",

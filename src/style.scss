@@ -96,6 +96,30 @@ main {
   }
 }
 
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  padding: 12px;
+  font-size: 14px;
+  box-shadow: 0 4px 16px var(--primary-text);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 %btn-common {
   cursor: pointer;
   border: none;
@@ -772,6 +796,15 @@ main {
     display: block;
   }
 
+  &__wishlist {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    width: 23px;
+    height: 20px;
+  }
+
   &__overlay {
     position: absolute;
     bottom: 0;
@@ -1437,6 +1470,13 @@ main {
 .profile-page {
   display: flex;
   justify-content: center;
+  width: 100%;
+  gap: 40px;
+
+  @media (max-width: $mobile-max-width) {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
 
   .auth-form {
     max-width: 480px;

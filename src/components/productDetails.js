@@ -3,6 +3,7 @@ import { registerTemplate, translate } from "../utils/i18n.js";
 import { getSelectedLanguage } from "../utils/storageService.js";
 import { productsApi } from "../utils/api.js";
 import { createCarousel } from "./productCarousel.js";
+import { checkIfInWishlist } from "../utils/wishlistService.js";
 
 export const initProductDetails = async (id) => {
   const selectedLanguage = getSelectedLanguage();
@@ -29,7 +30,7 @@ export const initProductDetails = async (id) => {
         <p class="product-details__price">${price} ₽</p>
         <div class="product-details__actions">
           <button class="product-details__btn btn-primary">{{productDetails.addToCart}}</button>
-          <div class="wishlist-icon"></div>
+          <div class="wishlist-icon ${checkIfInWishlist(product.id) ? "wishlist-icon--added" : ""}" onclick="toggleFavorite(event, ${product.id})"></div>
         </div>
         <p class="product-details__description">${product.description[selectedLanguage]}</p>
         <div class="product-details__materials">
@@ -51,7 +52,7 @@ export const initProductDetails = async (id) => {
           </div>
           <div class="product-details__attribute">
             <span class="product-details__attribute-name">{{productDetails.sizes}}:</span>
-            <span class="product-details__attribute-value">${product.sizes.join(", ")}</span>
+            <span class="product-details__attribute-value">${product.sizes.split(",").join(", ")}</span>
           </div>
         </div>
       </div>
