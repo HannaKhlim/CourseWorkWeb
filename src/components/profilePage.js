@@ -25,8 +25,10 @@ export const initProfilePage = async () => {
 
   const wishlist = user.wishlist ?? [];
   if (wishlist.length) {
-    const products = await Promise.all(
-      wishlist.map((id) => productsApi.getById(id).catch(() => null)),
+    const products = (
+      await Promise.all(
+        wishlist.map((id) => productsApi.getById(id).catch(() => null)),
+      )
     ).filter(Boolean);
     if (products.length) {
       const container = document.getElementById("profile-wishlist");
