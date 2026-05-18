@@ -5,6 +5,7 @@ import { initProductsPage } from "./components/productsGrid.js";
 import { initProductDetails } from "./components/productDetails.js";
 import { initAdminPanel } from "./components/adminPanel.js";
 import { initLoginPage } from "./components/loginPage.js";
+import { initProfilePage } from "./components/profilePage.js";
 
 const mainContent = document.getElementById("main-content");
 
@@ -23,6 +24,7 @@ const pageInits = {
   "/products": () => initProductsPage(),
   "/product/:id": ({ id }) => initProductDetails(id),
   "/login": () => initLoginPage(),
+  "/profile": () => initProfilePage(),
   "/admin": () => initAdminPanel(),
 };
 
@@ -72,6 +74,10 @@ const route = async () => {
   }
   if ((path === "/profile" || path === "/checkout") && !isLoggedIn) {
     navigateTo("/login");
+    return;
+  }
+  if (path === "/admin" && !getUserData()?.admin) {
+    navigateTo("/profile");
     return;
   }
 

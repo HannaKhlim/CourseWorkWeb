@@ -1088,17 +1088,41 @@
   ],
   "users": [
     {
-      "id": "YbQcKnPW6_0",
-      "name": "Rachel Rowe",
-      "surname": "Roman",
-      "middleName": "Abra Graves",
-      "nickname": "free_lion_504",
-      "email": "zidupi@mailinator.com",
+      "id": "1",
+      "name": "Hanna",
+      "surname": "Khlimonkova",
+      "middleName": "Sergeevna",
+      "nickname": "xannaq",
+      "email": "xannaq@xena.dev",
       "phone": "+375297777777",
-      "dateOfBirth": "2006-08-28",
+      "dateOfBirth": "2006-09-12",
       "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
       "createdAt": 1779109619719,
       "admin": true
+    },
+    {
+      "id": "Y8L1spiVMrg",
+      "name": "Athena Donaldson",
+      "surname": "Fischer",
+      "middleName": "Hashim Tate",
+      "nickname": "prime_fire_297",
+      "email": "bahymaf@mailinator.com",
+      "phone": "+375297777777",
+      "dateOfBirth": "1989-11-01",
+      "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
+      "createdAt": 1779115641216
+    },
+    {
+      "id": "XyfkPmiNVs4",
+      "name": "Halla Ramsey",
+      "surname": "Dyer",
+      "middleName": "Rhoda Combs",
+      "nickname": "neon_star_758",
+      "email": "sehohiqox@mailinator.com",
+      "phone": "+375297777777",
+      "dateOfBirth": "1999-07-02",
+      "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
+      "createdAt": 1779116678889
     }
   ],
   "orders": [],

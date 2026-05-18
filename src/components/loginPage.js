@@ -56,19 +56,13 @@ export const initLoginPage = () => {
 
   const blurValidators = {
     "login-nickname": (value) => {
-      const loginPassword = document.getElementById("login-password");
-      const error = loginPassword.value
-        ? null
-        : translate("{{auth.errors.required}}");
+      const error = value ? null : translate("{{auth.errors.required}}");
       loginFields.nickname = !error;
       markField("login-nickname", error);
       updateSubmitButton(loginSubmit, loginFields);
     },
     "login-password": (value) => {
-      const loginPassword = document.getElementById("login-password");
-      const error = loginPassword.value
-        ? null
-        : translate("{{auth.errors.required}}");
+      const error = value ? null : translate("{{auth.errors.required}}");
       loginFields.password = !error;
       markField("login-password", error);
       updateSubmitButton(loginSubmit, loginFields);
@@ -250,8 +244,10 @@ export const initLoginPage = () => {
     if (loginSubmit.disabled) return;
 
     try {
-      const users = await usersApi.getAll({ nickname });
-      const user = users[0];
+      const data = new FormData(loginForm);
+      const nickname = data.get("nickname").trim();
+      const password = data.get("password");
+      const user = (await usersApi.getAll({ nickname }))[0];
       if (!user || (await hashPassword(password)) !== user.passwordHash) {
         throw new Error("invalid");
       }

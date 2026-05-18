@@ -157,6 +157,11 @@ const translations = {
         agreementRequired: "Необходимо принять соглашение",
       },
     },
+    profile: {
+      title: "Профиль",
+      logoutBtn: "ВЫЙТИ",
+      adminBtn: "АДМИН",
+    },
   },
   en: {
     genders: {
@@ -313,6 +318,11 @@ const translations = {
         passwordMismatch: "Passwords do not match",
         agreementRequired: "You must accept the agreement",
       },
+    },
+    profile: {
+      title: "Profile",
+      logoutBtn: "LOGOUT",
+      adminBtn: "ADMIN",
     },
   },
 };

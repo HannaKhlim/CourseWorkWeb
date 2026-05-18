@@ -1,0 +1,62 @@
+<section class="profile-page">
+  <div class="auth-form">
+    <h2 class="auth-form__title">{{profile.title}}</h2>
+    <form novalidate>
+      <div class="form-field">
+        <label class="form-field__label" for="profile-name">
+          {{auth.register.nameLabel}}
+        </label>
+        <input class="input" id="profile-name" type="text" disabled />
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="profile-surname">
+          {{auth.register.surnameLabel}}
+        </label>
+        <input class="input" id="profile-surname" type="text" disabled />
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="profile-middlename">
+          {{auth.register.middleNameLabel}}
+        </label>
+        <input class="input" id="profile-middlename" type="text" disabled />
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="profile-nickname">
+          {{auth.register.nicknameLabel}}
+        </label>
+        <input class="input" id="profile-nickname" type="text" disabled />
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="profile-email">
+          {{auth.register.emailLabel}}
+        </label>
+        <input class="input" id="profile-email" type="email" disabled />
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="profile-phone">
+          {{auth.register.phoneLabel}}
+        </label>
+        <input class="input" id="profile-phone" type="tel" disabled />
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="profile-dob">
+          {{auth.register.dobLabel}}
+        </label>
+        <input class="input" id="profile-dob" type="date" disabled />
+      </div>
+    </form>
+    <div class="profile-actions">
+      <button class="btn-primary profile-actions__btn" id="profile-logout">
+        {{profile.logoutBtn}}
+      </button>
+      <button
+        class="btn-primary profile-actions__btn"
+        id="profile-admin"
+        onclick="navigateTo('/admin')"
+        style="display: none"
+      >
+        {{profile.adminBtn}}
+      </button>
+    </div>
+  </div>
+</section>
