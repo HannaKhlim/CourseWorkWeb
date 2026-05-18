@@ -1086,7 +1086,21 @@
       "createdAt": 1778936326862
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "YbQcKnPW6_0",
+      "name": "Rachel Rowe",
+      "surname": "Roman",
+      "middleName": "Abra Graves",
+      "nickname": "free_lion_504",
+      "email": "zidupi@mailinator.com",
+      "phone": "+375297777777",
+      "dateOfBirth": "2006-08-28",
+      "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
+      "createdAt": 1779109619719,
+      "admin": true
+    }
+  ],
   "orders": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

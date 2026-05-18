@@ -1,4 +1,14 @@
+:root {
+  --success: #a3d977;
+  --error: #f93e3e;
+  --get: #61affe;
+  --post: #49cc90;
+  --put: #fca130;
+  --delete: #f93e3e;
+}
+
 [data-theme="light"] {
+  color-scheme: light;
   --primary-bg: #ffffff;
   --primary-text: #1a1a1a;
   --secondary-bg: #f3f3f3;
@@ -8,6 +18,7 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: dark;
   --primary-bg: #1a1a1a;
   --primary-text: #f5f5f5;
   --secondary-bg: #333333;
@@ -92,6 +103,11 @@ main {
   padding: 8px;
   font-size: 18px;
   font-weight: 700;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 }
 
 %outline-btn {
@@ -145,11 +161,58 @@ main {
   font-weight: 400;
 }
 
+.btn-form {
+  @extend %btn-common;
+  flex-shrink: 0;
+  padding: 0 12px;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--inactive-text);
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--primary-text);
+  }
+}
+
 .input {
   width: 100%;
   padding: 8px 12px;
-  border: 0;
-  font-size: 18px;
+  font-size: 14px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--primary-bg);
+  transition: border-color 0.2s;
+  outline: none;
+
+  &:focus {
+    border-color: var(--primary-text);
+  }
+
+  &.invalid {
+    border-color: var(--error);
+  }
+
+  &[type="date"] {
+    cursor: pointer;
+  }
+}
+
+.checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  accent-color: var(--primary-text);
+  appearance: none;
+  background-color: var(--primary-bg);
+  cursor: pointer;
+
+  &:checked {
+    appearance: revert;
+  }
 }
 
 .wishlist-icon {
@@ -329,6 +392,7 @@ main {
       gap: 20px;
       width: 100%;
       justify-content: center;
+
       &:first-child {
         justify-content: flex-start;
       }
@@ -1118,8 +1182,9 @@ main {
     }
 
     &__input {
+      font-size: 18px;
       background-color: var(--secondary-bg);
-      color: var(--primary-text);
+      border-color: var(--secondary-bg);
     }
   }
 }
@@ -1148,16 +1213,16 @@ main {
   overflow: hidden;
 
   &--get {
-    border-left: 4px solid #61affe;
+    border-left: 4px solid var(--get);
   }
   &--post {
-    border-left: 4px solid #49cc90;
+    border-left: 4px solid var(--post);
   }
   &--put {
-    border-left: 4px solid #fca130;
+    border-left: 4px solid var(--put);
   }
   &--delete {
-    border-left: 4px solid #f93e3e;
+    border-left: 4px solid var(--delete);
   }
 
   &__header {
@@ -1187,16 +1252,16 @@ main {
     color: #fff;
 
     &--get {
-      background: #61affe;
+      background: var(--get);
     }
     &--post {
-      background: #49cc90;
+      background: var(--post);
     }
     &--put {
-      background: #fca130;
+      background: var(--put);
     }
     &--delete {
-      background: #f93e3e;
+      background: var(--delete);
     }
   }
 
@@ -1272,10 +1337,90 @@ main {
     overflow-y: auto;
 
     &--success {
-      color: #a3d977;
+      color: var(--success);
     }
     &--error {
-      color: #f93e3e;
+      color: var(--error);
     }
+  }
+}
+
+.auth {
+  &-page {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+
+    @media (max-width: $mobile-max-width) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &-form {
+    flex: 1;
+    background: var(--secondary-bg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (max-width: $mobile-max-width) {
+      padding: 20px;
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    &__submit {
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--secondary-text);
+  }
+
+  &--with-btn {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  &__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .required-mark {
+    color: var(--error);
+    font-weight: 700;
+  }
+
+  .field-error {
+    font-size: 12px;
+    color: var(--error);
+    min-height: 16px;
+    line-height: 1.3;
   }
 }

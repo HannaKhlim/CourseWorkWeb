@@ -1,6 +1,7 @@
+import { sleep } from "./timers.js";
+
 const BASE_URL = "http://localhost:3001";
 const loader = document.getElementById("loader");
-import { sleep } from "./timers.js";
 
 const request = async (path, options = {}) => {
   loader.classList.add("visible");
@@ -28,5 +29,5 @@ const resource = (name) => ({
 });
 
 export const productsApi = resource("products");
-export const usersApi = resource("users");
 export const ordersApi = resource("orders");
+export const usersApi = resource("users");

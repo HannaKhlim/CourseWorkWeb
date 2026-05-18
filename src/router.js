@@ -1,9 +1,10 @@
-import { selectGender } from "./utils/storageService.js";
+import { selectGender, getUserData } from "./utils/storageService.js";
 import { registerTemplate, translate } from "./utils/i18n.js";
 import { initHomePage } from "./components/homePage.js";
 import { initProductsPage } from "./components/productsGrid.js";
 import { initProductDetails } from "./components/productDetails.js";
 import { initAdminPanel } from "./components/adminPanel.js";
+import { initLoginPage } from "./components/loginPage.js";
 
 const mainContent = document.getElementById("main-content");
 
@@ -21,6 +22,7 @@ const pageInits = {
   "/": () => initHomePage(),
   "/products": () => initProductsPage(),
   "/product/:id": ({ id }) => initProductDetails(id),
+  "/login": () => initLoginPage(),
   "/admin": () => initAdminPanel(),
 };
 
@@ -50,12 +52,29 @@ const matchRoute = (path) => {
   return null;
 };
 
+export const navigateTo = (route) => {
+  window.history.pushState(null, "", route);
+  window.dispatchEvent(new Event("popstate"));
+  document.getElementById("mobile-menu-overlay").classList.remove("open");
+};
+
 const route = async () => {
   const path = window.location.pathname;
   const searchParams = new URLSearchParams(window.location.search);
   if (searchParams.has("gender")) {
     selectGender(searchParams.get("gender"));
   }
+
+  const isLoggedIn = Boolean(getUserData());
+  if (path === "/login" && isLoggedIn) {
+    navigateTo("/profile");
+    return;
+  }
+  if ((path === "/profile" || path === "/checkout") && !isLoggedIn) {
+    navigateTo("/login");
+    return;
+  }
+
   const match = matchRoute(path);
 
   let content;
@@ -80,12 +99,6 @@ const route = async () => {
 
   const init = match && pageInits[match.pattern];
   if (init) init(match.params);
-};
-
-export const navigateTo = (route) => {
-  window.history.pushState(null, "", route);
-  window.dispatchEvent(new Event("popstate"));
-  document.getElementById("mobile-menu-overlay").classList.remove("open");
 };
 
 window.navigateTo = navigateTo;

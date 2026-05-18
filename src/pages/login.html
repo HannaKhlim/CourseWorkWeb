@@ -1,0 +1,205 @@
+<section class="auth-page">
+  <div class="auth-form" id="auth-login-panel">
+    <h2 class="auth-form__title">{{auth.login.title}}</h2>
+    <form id="login-form" novalidate>
+      <div class="form-field">
+        <label class="form-field__label" for="login-nickname">
+          {{auth.login.nicknameLabel}} <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="login-nickname"
+          type="text"
+          autocomplete="username"
+          placeholder="{{auth.login.nicknamePlaceholder}}"
+        />
+        <span class="field-error" id="error-login-nickname"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="login-password">
+          {{auth.login.passwordLabel}} <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="login-password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="{{auth.login.passwordPlaceholder}}"
+        />
+        <span class="field-error" id="error-login-password"></span>
+      </div>
+      <span class="field-error" id="error-login-general"></span>
+      <button
+        class="btn-primary auth-form__submit"
+        id="login-submit"
+        type="submit"
+        disabled
+      >
+        {{auth.login.submitBtn}}
+      </button>
+    </form>
+  </div>
+  <div class="auth-form" id="auth-register-panel">
+    <h2 class="auth-form__title">{{auth.register.title}}</h2>
+    <form id="register-form" novalidate>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-name">
+          {{auth.register.nameLabel}} <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="reg-name"
+          name="name"
+          type="text"
+          autocomplete="given-name"
+          placeholder="{{auth.register.namePlaceholder}}"
+        />
+        <span class="field-error" id="error-reg-name"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-surname">
+          {{auth.register.surnameLabel}} <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="reg-surname"
+          name="surname"
+          type="text"
+          autocomplete="family-name"
+          placeholder="{{auth.register.surnamePlaceholder}}"
+        />
+        <span class="field-error" id="error-reg-surname"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-middle-name">
+          {{auth.register.middleNameLabel}}
+        </label>
+        <input
+          class="input"
+          id="reg-middle-name"
+          name="middleName"
+          type="text"
+          autocomplete="additional-name"
+          placeholder="{{auth.register.middleNamePlaceholder}}"
+        />
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-nickname">
+          {{auth.register.nicknameLabel}} <span class="required-mark">*</span>
+        </label>
+        <div class="form-field--with-btn">
+          <input
+            class="input"
+            id="reg-nickname"
+            name="nickname"
+            type="text"
+            autocomplete="username"
+            placeholder="{{auth.register.nicknamePlaceholder}}"
+          />
+          <button class="btn-form" id="btn-gen-nickname" type="button">
+            G
+          </button>
+        </div>
+        <span class="field-error" id="error-reg-nickname"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-email">
+          {{auth.register.emailLabel}} <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="reg-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="{{auth.register.emailPlaceholder}}"
+        />
+        <span class="field-error" id="error-reg-email"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-phone">
+          {{auth.register.phoneLabel}} <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="reg-phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          placeholder="{{auth.register.phonePlaceholder}}"
+        />
+        <span class="field-error" id="error-reg-phone"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-dob">
+          {{auth.register.dobLabel}} <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="reg-dob"
+          name="dateOfBirth"
+          type="date"
+          autocomplete="bday"
+        />
+        <span class="field-error" id="error-reg-dob"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__label" for="reg-password">
+          {{auth.register.passwordLabel}} <span class="required-mark">*</span>
+        </label>
+        <div class="form-field--with-btn">
+          <input
+            class="input"
+            id="reg-password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            placeholder="{{auth.register.passwordPlaceholder}}"
+          />
+          <button class="btn-form" id="btn-gen-password" type="button">
+            G
+          </button>
+        </div>
+        <span class="field-error" id="error-reg-password"></span>
+      </div>
+      <div class="form-field" id="repeat-password-field">
+        <label class="form-field__label" for="reg-repeat-password">
+          {{auth.register.repeatPasswordLabel}}
+          <span class="required-mark">*</span>
+        </label>
+        <input
+          class="input"
+          id="reg-repeat-password"
+          type="password"
+          autocomplete="new-password"
+          placeholder="{{auth.register.repeatPasswordPlaceholder}}"
+        />
+        <span class="field-error" id="error-reg-repeat-password"></span>
+      </div>
+      <div class="form-field">
+        <label class="form-field__checkbox-label" for="reg-agreement">
+          <input
+            id="reg-agreement"
+            name="agreedToTerms"
+            type="checkbox"
+            class="checkbox"
+          />
+          <span
+            >{{auth.register.agreementText}}
+            <span class="required-mark">*</span></span
+          >
+        </label>
+        <span class="field-error" id="error-reg-agreement"></span>
+      </div>
+      <span class="field-error" id="error-registration-general"></span>
+      <button
+        class="btn-primary auth-form__submit"
+        id="register-submit"
+        type="submit"
+        disabled
+      >
+        {{auth.register.submitBtn}}
+      </button>
+    </form>
+  </div>
+</section>
