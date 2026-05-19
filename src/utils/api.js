@@ -1,6 +1,6 @@
 import { sleep } from "./timers.js";
 
-const BASE_URL = window.API_BASE_URL || "http://localhost:3001";
+const BASE_URL = "/api";
 const loader = document.getElementById("loader");
 
 const request = async (path, options = {}) => {

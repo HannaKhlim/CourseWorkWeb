@@ -1,18 +1,21 @@
 import express from "express";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.get("/env.js", (req, res) => {
-  res.type("js");
-  res.send(
-    `window.API_BASE_URL = "${process.env.API_BASE_URL || "http://localhost:3001"}";`,
-  );
-});
+app.use(
+  "/api",
+  createProxyMiddleware({
+    target: process.env.API_BASE_URL || "http://localhost:3001",
+    changeOrigin: true,
+    pathRewrite: { "^/api": "" },
+  }),
+);
 
 app.use(express.static(join(__dirname)));
 
