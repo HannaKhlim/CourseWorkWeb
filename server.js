@@ -7,6 +7,13 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.get("/env.js", (req, res) => {
+  res.type("js");
+  res.send(
+    `window.API_BASE_URL = "${process.env.API_BASE_URL || "http://localhost:3001"}";`,
+  );
+});
+
 app.use(express.static(join(__dirname)));
 
 app.get("*", (req, res) => {
