@@ -1,14 +1,21 @@
 import { navigateTo } from "../router.js";
-import { registerTemplate, translate } from "../utils/i18n.js";
+import { translate } from "../utils/i18n.js";
 import { getSelectedLanguage } from "../utils/storageService.js";
 import { productsApi } from "../utils/api.js";
 import { createCarousel } from "./productCarousel.js";
 import { checkIfInWishlist, toggleFavorite } from "../utils/wishlistService.js";
+import { getCart, setCartQuantity } from "../utils/cartService.js";
+import { debounce } from "../utils/timers.js";
 
 export const initProductDetails = async (id) => {
   const selectedLanguage = getSelectedLanguage();
-  const container = document.getElementById("product-details");
-  if (!container) return;
+  let addedCounter =
+    getCart().find((item) => item.productId === String(id))?.quantity ?? 0;
+
+  const debouncedSetCartQuantity = debounce(
+    (quantity) => setCartQuantity(id, quantity),
+    500,
+  );
 
   try {
     const product = await productsApi.getById(id).catch(() => null);
@@ -18,51 +25,66 @@ export const initProductDetails = async (id) => {
       return;
     }
 
-    const price = product.price.toLocaleString(selectedLanguage);
+    const container = document.getElementById("product-details");
+    const img = (container.querySelector("[data-attr='img']").src =
+      product.image);
+    container.querySelector("[data-attr='name']").textContent =
+      product.name[selectedLanguage];
+    container.querySelector("[data-attr='brand']").textContent = product.brand;
+    container.querySelector("[data-attr='price']").textContent =
+      `${product.price.toLocaleString(selectedLanguage)} ₽`;
+    container.querySelector("[data-attr='description']").textContent =
+      product.description[selectedLanguage];
+    container.querySelector("[data-attr='materials-value']").textContent =
+      product.materials[selectedLanguage];
+    container.querySelector("[data-attr='id']").textContent = product.id;
+    container.querySelector("[data-attr='origin']").textContent =
+      product.origin[selectedLanguage];
+    container.querySelector("[data-attr='color']").textContent =
+      product.color[selectedLanguage];
+    container.querySelector("[data-attr='sizes']").textContent = product.sizes
+      .split(",")
+      .join(", ");
 
-    const html = `
-      <div class="product-details__image-wrapper">
-        <img src="${product.image}" alt="${product.name[selectedLanguage]}" class="product-details__img" />
-      </div>
-      <div class="product-details__info">
-        <h1 class="product-details__name">${product.name[selectedLanguage]}</h1>
-        <h2 class="product-details__brand">${product.brand}</h2>
-        <p class="product-details__price">${price} ₽</p>
-        <div class="product-details__actions">
-          <button class="product-details__btn btn-primary">{{productDetails.addToCart}}</button>
-          <div class="wishlist-icon ${checkIfInWishlist(product.id) ? "wishlist-icon--added" : ""}"></div>
-        </div>
-        <p class="product-details__description">${product.description[selectedLanguage]}</p>
-        <div class="product-details__materials">
-          <p class="product-details__materials-label">{{productDetails.materials}}:</p>
-          <p class="product-details__materials-value">${product.materials[selectedLanguage]}</p>
-        </div>
-        <div class="product-details__attributes">
-          <div class="product-details__attribute">
-            <span class="product-details__attribute-name">{{productDetails.id}}:</span>
-            <span class="product-details__attribute-value">${product.id}</span>
-          </div>
-          <div class="product-details__attribute">
-            <span class="product-details__attribute-name">{{productDetails.origin}}:</span>
-            <span class="product-details__attribute-value">${product.origin[selectedLanguage]}</span>
-          </div>
-          <div class="product-details__attribute">
-            <span class="product-details__attribute-name">{{productDetails.color}}:</span>
-            <span class="product-details__attribute-value">${product.color[selectedLanguage]}</span>
-          </div>
-          <div class="product-details__attribute">
-            <span class="product-details__attribute-name">{{productDetails.sizes}}:</span>
-            <span class="product-details__attribute-value">${product.sizes.split(",").join(", ")}</span>
-          </div>
-        </div>
-      </div>
-    `.trim();
+    const addToCart = container.querySelector(".product-details__add");
+    const controls = container.querySelector(".product-details__cart-controls");
+    const quantityDisplay = controls.querySelector("[data-quantity]");
+    const wishlistIcon = container.querySelector(".wishlist-icon");
 
-    registerTemplate("product-details", html);
-    container.innerHTML = translate(html);
+    wishlistIcon.classList.toggle(
+      "wishlist-icon--added",
+      checkIfInWishlist(product.id),
+    );
+
+    const updateQuantity = (quantity) => {
+      if (quantity > 0) {
+        controls.hidden = false;
+        addToCart.hidden = true;
+        quantityDisplay.textContent = quantity;
+      } else {
+        controls.hidden = true;
+        addToCart.hidden = false;
+      }
+    };
+
+    const handleControlClick = (quantity) => {
+      addedCounter = quantity;
+      debouncedSetCartQuantity(quantity);
+      updateQuantity(quantity);
+    };
+
+    updateQuantity(addedCounter);
+
+    wishlistIcon.addEventListener("click", (event) =>
+      toggleFavorite(event, product.id),
+    );
+    addToCart.addEventListener("click", () => handleControlClick(1));
     container
-      .querySelector(".wishlist-icon")
-      .addEventListener("click", (event) => toggleFavorite(event, product.id));
+      .querySelector("[data-action='increase']")
+      .addEventListener("click", () => handleControlClick(addedCounter + 1));
+    container
+      .querySelector("[data-action='decrease']")
+      .addEventListener("click", () => handleControlClick(addedCounter - 1));
 
     if (product.suggestions?.length) {
       const suggestionProducts = await Promise.all(

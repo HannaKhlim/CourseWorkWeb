@@ -6,6 +6,7 @@ import { initProductDetails } from "./components/productDetails.js";
 import { initAdminPanel } from "./components/adminPanel.js";
 import { initLoginPage } from "./components/loginPage.js";
 import { initProfilePage } from "./components/profilePage.js";
+import { initCheckoutPage } from "./components/checkoutPage.js";
 
 const mainContent = document.getElementById("main-content");
 
@@ -25,6 +26,7 @@ const pageInits = {
   "/product/:id": ({ id }) => initProductDetails(id),
   "/login": () => initLoginPage(),
   "/profile": () => initProfilePage(),
+  "/checkout": () => initCheckoutPage(),
   "/admin": () => initAdminPanel(),
 };
 
