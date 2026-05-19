@@ -42,7 +42,7 @@
         "ru": "Платье в цветочный принт",
         "en": "Floral Print Dress"
       },
-      "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Multicolor Floral Print Dress.jpg",
       "description": {
         "ru": "Лёгкое платье с цветочным принтом для тёплых дней",
         "en": "Light floral print dress perfect for warm days"
@@ -73,7 +73,7 @@
         "ru": "Белая блузка",
         "en": "White Blouse"
       },
-      "image": "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&fit=crop&auto=format",
+      "image": "/public/photos/White Blouse.jpg",
       "description": {
         "ru": "Классическая белая блузка с лёгкой тканью",
         "en": "Classic white blouse in lightweight fabric"
@@ -104,7 +104,7 @@
         "ru": "Джинсы скинни",
         "en": "Skinny Jeans"
       },
-      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Blue Skinny Jeans.jpg",
       "description": {
         "ru": "Узкие джинсы с высокой посадкой из стрейч-денима",
         "en": "High-waist skinny jeans in stretch denim"
@@ -135,7 +135,7 @@
         "ru": "Шерстяное пальто",
         "en": "Wool Coat"
       },
-      "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Beige Wool Coat.jpg",
       "description": {
         "ru": "Элегантное пальто из натуральной шерсти на осень и зиму",
         "en": "Elegant natural wool coat for autumn and winter"
@@ -166,7 +166,7 @@
         "ru": "Вязаный свитер",
         "en": "Knit Sweater"
       },
-      "image": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Cream Knit Sweater.jpg",
       "description": {
         "ru": "Мягкий вязаный свитер с круглым вырезом",
         "en": "Soft knit sweater with a round neckline"
@@ -197,7 +197,7 @@
         "ru": "Базовая футболка",
         "en": "Basic T-Shirt"
       },
-      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&fit=crop&auto=format",
+      "image": "/public/photos/White Basic T-Shirt.jpg",
       "description": {
         "ru": "Базовая хлопковая футболка для повседневного образа",
         "en": "Essential cotton t-shirt for everyday wear"
@@ -228,7 +228,7 @@
         "ru": "Пиджак",
         "en": "Blazer"
       },
-      "image": "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Black Blazer.jpg",
       "description": {
         "ru": "Приталенный пиджак для офиса и выхода в свет",
         "en": "Fitted blazer suitable for office and evening outings"
@@ -259,7 +259,7 @@
         "ru": "Широкие брюки",
         "en": "Wide Leg Trousers"
       },
-      "image": "https://images.unsplash.com/photo-1594938298603-c8148c4b4c72?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Beige Wide Leg Trousers.jpg",
       "description": {
         "ru": "Свободные брюки с широкими штанинами и высокой посадкой",
         "en": "Relaxed wide-leg trousers with a high waist"
@@ -290,7 +290,7 @@
         "ru": "Джинсовые шорты",
         "en": "Denim Shorts"
       },
-      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Light Blue Denim Shorts.jpg",
       "description": {
         "ru": "Короткие джинсовые шорты с необработанным краем",
         "en": "Short denim shorts with a raw hem"
@@ -321,7 +321,7 @@
         "ru": "Оверсайз кардиган",
         "en": "Oversized Cardigan"
       },
-      "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Grey Oversized Cardigan.jpg",
       "description": {
         "ru": "Уютный кардиган свободного кроя для домашнего образа",
         "en": "Cozy oversized cardigan for a relaxed look"
@@ -352,7 +352,7 @@
         "ru": "Спортивные леггинсы",
         "en": "Sports Leggings"
       },
-      "image": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Black Sports Leggings.jpg",
       "description": {
         "ru": "Функциональные компрессионные леггинсы для тренировок",
         "en": "Functional compression leggings for workouts"
@@ -383,7 +383,7 @@
         "ru": "Худи на молнии",
         "en": "Zip-Up Hoodie"
       },
-      "image": "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Grey Marl Zip-Up Hoodie.jpg",
       "description": {
         "ru": "Спортивное худи с молнией по всей длине и капюшоном",
         "en": "Athletic zip-through hoodie with a drawcord hood"
@@ -414,7 +414,7 @@
         "ru": "Оксфордская рубашка",
         "en": "Oxford Shirt"
       },
-      "image": "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Light Blue Oxford Shirt.jpg",
       "description": {
         "ru": "Классическая рубашка из оксфордской ткани с пуговицами на воротнике",
         "en": "Classic button-down collar oxford shirt"
@@ -445,7 +445,7 @@
         "ru": "Чинос слим фит",
         "en": "Slim Fit Chinos"
       },
-      "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Khaki Slim Fit Chinos.jpg",
       "description": {
         "ru": "Облегающие чинос из эластичного хлопка с зауженным кроем",
         "en": "Slim-fit stretch cotton chinos with a tapered leg"
@@ -476,7 +476,7 @@
         "ru": "Кожаная сумка-шопер",
         "en": "Leather Tote Bag"
       },
-      "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Black Leather Tote Bag.jpg",
       "description": {
         "ru": "Вместительная сумка-шопер из искусственной кожи с внутренним карманом",
         "en": "Spacious faux leather tote bag with an interior pocket"
@@ -507,7 +507,7 @@
         "ru": "Городской рюкзак",
         "en": "Urban Backpack"
       },
-      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Navy Urban Backpack.jpg",
       "description": {
         "ru": "Практичный рюкзак для города с отделением для ноутбука",
         "en": "Practical urban backpack with a laptop compartment"
@@ -538,7 +538,7 @@
         "ru": "Шёлковый платок",
         "en": "Silk Scarf"
       },
-      "image": "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Multicolor Silk Scarf.jpg",
       "description": {
         "ru": "Лёгкий шёлковый платок с абстрактным принтом",
         "en": "Lightweight silk scarf with an abstract print"
@@ -569,7 +569,7 @@
         "ru": "Кожаный ремень",
         "en": "Leather Belt"
       },
-      "image": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Brown Leather Belt.jpg",
       "description": {
         "ru": "Классический ремень из натуральной кожи с металлической пряжкой",
         "en": "Classic genuine leather belt with a metal buckle"
@@ -600,7 +600,7 @@
         "ru": "Туфли на шпильке",
         "en": "Stiletto Heels"
       },
-      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Black Stiletto Heels.jpg",
       "description": {
         "ru": "Элегантные туфли на высоком каблуке из лаковой кожи",
         "en": "Elegant patent leather stiletto heels"
@@ -631,7 +631,7 @@
         "ru": "Белые кроссовки",
         "en": "White Sneakers"
       },
-      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&fit=crop&auto=format",
+      "image": "/public/photos/White Sneakers (women).jpg",
       "description": {
         "ru": "Лёгкие белые кроссовки на платформе для повседневного образа",
         "en": "Lightweight white platform sneakers for everyday wear"
@@ -662,7 +662,7 @@
         "ru": "Кружевной бралет",
         "en": "Lace Bralette"
       },
-      "image": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Dusty Pink Lace Bralette.jpg",
       "description": {
         "ru": "Нежный бралет из кружева с регулируемыми бретелями",
         "en": "Delicate lace bralette with adjustable straps"
@@ -693,7 +693,7 @@
         "ru": "Хлопковые трусы-бикини",
         "en": "Cotton Bikini Briefs"
       },
-      "image": "https://images.unsplash.com/photo-1584466977773-e625c37cdd50?w=600&fit=crop&auto=format",
+      "image": "/public/photos/White Cotton Bikini Briefs.jpg",
       "description": {
         "ru": "Мягкие хлопковые трусы с эластичным поясом",
         "en": "Soft cotton bikini briefs with an elastic waistband"
@@ -724,7 +724,7 @@
         "ru": "Кожаные кроссовки",
         "en": "Leather Sneakers"
       },
-      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&fit=crop&auto=format",
+      "image": "/public/photos/White Leather Sneakers (men).jpg",
       "description": {
         "ru": "Классические кроссовки из белой кожи с резиновой подошвой",
         "en": "Classic white leather sneakers with a rubber sole"
@@ -755,7 +755,7 @@
         "ru": "Дерби из кожи",
         "en": "Leather Derby Shoes"
       },
-      "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Brown Leather Derby Shoes.jpg",
       "description": {
         "ru": "Классические мужские туфли дерби из гладкой кожи",
         "en": "Classic men's smooth leather derby shoes"
@@ -786,7 +786,7 @@
         "ru": "Боксеры-брифы",
         "en": "Boxer Briefs"
       },
-      "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f43?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Grey Boxer Briefs.jpg",
       "description": {
         "ru": "Удобные боксеры-брифы из хлопка с эластичным поясом",
         "en": "Comfortable cotton boxer briefs with an elastic waistband"
@@ -817,7 +817,7 @@
         "ru": "Боксеры классические",
         "en": "Classic Boxers"
       },
-      "image": "https://images.unsplash.com/photo-1565693413579-8ff3fdc1b03b?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Blue Classic Boxers.jpg",
       "description": {
         "ru": "Свободные боксеры в клетку из хлопкового поплина",
         "en": "Relaxed checked boxers in cotton poplin"
@@ -848,7 +848,7 @@
         "ru": "Детское худи",
         "en": "Kids Hoodie"
       },
-      "image": "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Blue Kids Hoodie.jpg",
       "description": {
         "ru": "Тёплое флисовое худи с кенгуру-карманом для детей",
         "en": "Warm fleece hoodie with a kangaroo pocket for kids"
@@ -879,7 +879,7 @@
         "ru": "Джинсовый комбинезон",
         "en": "Denim Dungarees"
       },
-      "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Light Blue Denim Dungarees.jpg",
       "description": {
         "ru": "Удобный джинсовый комбинезон для активных детей",
         "en": "Comfortable denim dungarees for active kids"
@@ -910,7 +910,7 @@
         "ru": "Детские кеды",
         "en": "Kids Canvas Sneakers"
       },
-      "image": "https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=600&fit=crop&auto=format",
+      "image": "/public/photos/White Kids Canvas Sneakers.jpg",
       "description": {
         "ru": "Классические детские кеды из хлопкового холста",
         "en": "Classic kids canvas sneakers with a rubber toe cap"
@@ -941,7 +941,7 @@
         "ru": "Туфли Мэри Джейн",
         "en": "Mary Jane Shoes"
       },
-      "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Black Mary Jane Shoes.jpg",
       "description": {
         "ru": "Нарядные детские туфли на ремешке с дышащей подошвой",
         "en": "Smart kids strap shoes with a breathable sole"
@@ -972,7 +972,7 @@
         "ru": "Детский рюкзак",
         "en": "Kids Backpack"
       },
-      "image": "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Red Kids Backpack.jpg",
       "description": {
         "ru": "Яркий детский рюкзак для школы с эргономичными лямками",
         "en": "Bright kids school backpack with ergonomic straps"
@@ -1003,7 +1003,7 @@
         "ru": "Детская бейсболка",
         "en": "Kids Baseball Cap"
       },
-      "image": "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Black Kids Baseball Cap.jpg",
       "description": {
         "ru": "Лёгкая хлопковая бейсболка с логотипом",
         "en": "Lightweight cotton baseball cap with logo"
@@ -1034,7 +1034,7 @@
         "ru": "Хлопковая майка",
         "en": "Cotton Undershirt"
       },
-      "image": "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=600&fit=crop&auto=format",
+      "image": "/public/photos/White Cotton Undershirt.jpg",
       "description": {
         "ru": "Мягкая хлопковая майка для повседневной носки",
         "en": "Soft cotton undershirt for everyday wear"
@@ -1065,7 +1065,7 @@
         "ru": "Набор трусов в принт",
         "en": "Printed Briefs Set"
       },
-      "image": "https://images.unsplash.com/photo-1519689373023-dd07c7988603?w=600&fit=crop&auto=format",
+      "image": "/public/photos/Multicolor Printed Briefs Set.jpg",
       "description": {
         "ru": "Набор из 3 хлопковых трусов с весёлыми принтами",
         "en": "Pack of 3 cotton briefs with fun prints"
@@ -1124,6 +1124,19 @@
       "dateOfBirth": "1999-07-02",
       "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
       "createdAt": 1779116678889
+    },
+    {
+      "id": "DdGFY9Xhi4g",
+      "name": "Екатерина",
+      "surname": "Семёнчикова",
+      "middleName": "",
+      "nickname": "kate_storm_968",
+      "email": "kate_kateee@gmail.com",
+      "phone": "+375297895465",
+      "dateOfBirth": "2006-11-02",
+      "passwordHash": "070df62fd29af5f43b09d1d33da4612fd2071b3bcf2a4c7bebc64750003c28db",
+      "createdAt": 1779207074931,
+      "wishlist": ["1012", "1011", "1015"]
     }
   ],
   "orders": [],
