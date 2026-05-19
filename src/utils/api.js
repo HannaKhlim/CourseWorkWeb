@@ -33,3 +33,4 @@ const resource = (name) => ({
 export const productsApi = resource("products");
 export const ordersApi = resource("orders");
 export const usersApi = resource("users");
+export const couponsApi = resource("coupons");

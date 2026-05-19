@@ -1099,7 +1099,21 @@
       "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
       "createdAt": 1779109619719,
       "admin": true,
-      "wishlist": ["1010", "1012", "1011"]
+      "wishlist": ["1010", "1012", "1011"],
+      "cart": [
+        {
+          "productId": "1020",
+          "quantity": 1
+        },
+        {
+          "productId": "1009",
+          "quantity": 1
+        },
+        {
+          "productId": "1011",
+          "quantity": 3
+        }
+      ]
     },
     {
       "id": "Y8L1spiVMrg",
@@ -1139,6 +1153,37 @@
       "wishlist": ["1012", "1011", "1015"]
     }
   ],
-  "orders": [],
+  "coupons": [
+    {
+      "id": "1",
+      "code": "authentication",
+      "discountPercent": 20
+    }
+  ],
+  "orders": [
+    {
+      "userId": "1",
+      "items": [
+        {
+          "productId": "1007",
+          "quantity": 2
+        },
+        {
+          "productId": "1011",
+          "quantity": 12
+        }
+      ],
+      "totalPrice": 54460,
+      "discountAmount": 0,
+      "finalPrice": 54460,
+      "pickupPoint": {
+        "city": "minsk",
+        "coordinates": [27.5615, 53.9045]
+      },
+      "status": "pending",
+      "createdAt": 1779204539005,
+      "id": "JkYGCgRjBN4"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

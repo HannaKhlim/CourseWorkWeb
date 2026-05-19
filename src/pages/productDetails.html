@@ -1,2 +1,61 @@
-<section class="product-details" id="product-details"></section>
+<section class="product-details" id="product-details">
+  <div class="product-details__image-wrapper">
+    <img src="" alt="" class="product-details__img" data-attr="img" />
+  </div>
+  <div class="product-details__info">
+    <h1 class="product-details__name" data-attr="name"></h1>
+    <h2 class="product-details__brand" data-attr="brand"></h2>
+    <p class="product-details__price" data-attr="price"></p>
+    <div class="product-details__actions">
+      <button class="product-details__add btn-primary">
+        {{productDetails.addToCart}}
+      </button>
+      <div class="product-details__cart-controls" hidden>
+        <button class="btn-secondary" data-action="decrease">-</button>
+        <span class="product-details__cart-quantity" data-quantity></span>
+        <button class="btn-secondary" data-action="increase">+</button>
+      </div>
+      <div class="wishlist-icon"></div>
+    </div>
+    <p class="product-details__description" data-attr="description"></p>
+    <div class="product-details__materials">
+      <p class="product-details__materials-label">
+        {{productDetails.materials}}:
+      </p>
+      <p
+        class="product-details__materials-value"
+        data-attr="materials-value"
+      ></p>
+    </div>
+    <div class="product-details__attributes">
+      <div class="product-details__attribute">
+        <span class="product-details__attribute-name"
+          >{{productDetails.id}}:</span
+        >
+        <span class="product-details__attribute-value" data-attr="id"></span>
+      </div>
+      <div class="product-details__attribute">
+        <span class="product-details__attribute-name"
+          >{{productDetails.origin}}:</span
+        >
+        <span
+          class="product-details__attribute-value"
+          data-attr="origin"
+        ></span>
+      </div>
+      <div class="product-details__attribute">
+        <span class="product-details__attribute-name"
+          >{{productDetails.color}}:</span
+        >
+        <span class="product-details__attribute-value" data-attr="color"></span>
+      </div>
+      <div class="product-details__attribute">
+        <span class="product-details__attribute-name"
+          >{{productDetails.sizes}}:</span
+        >
+        <span class="product-details__attribute-value" data-attr="sizes"></span>
+      </div>
+    </div>
+  </div>
+</section>
 <div id="suggestions-carousel"></div>

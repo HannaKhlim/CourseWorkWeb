@@ -1,0 +1,55 @@
+<section id="checkout" class="checkout">
+  <h1 id="empty-message" class="checkout__empty-message">
+    {{checkout.cartEmpty}}
+  </h1>
+  <div id="carousel" hidden></div>
+  <form id="form" class="checkout__form">
+    <div id="map" class="checkout__map"></div>
+    <div class="checkout__order-summary">
+      <div class="checkout__order-price">
+        <div class="checkout__order-price-row">
+          {{checkout.subtotal}}
+          <span class="checkout__order-price-value" data-value="subtotal"
+            >0 ₽</span
+          >
+        </div>
+        <div class="checkout__order-price-row">
+          {{checkout.discount}}
+          <span
+            class="checkout__order-price-value checkout__order-price-value--discount"
+            data-value="discount"
+            >0 ₽</span
+          >
+        </div>
+        <div class="checkout__order-price-row">
+          {{checkout.total}}
+          <span class="checkout__order-price-value" data-value="total"
+            >0 ₽</span
+          >
+        </div>
+        <div class="checkout__order-price-row">
+          <input
+            type="text"
+            id="promo-code"
+            class="input"
+            placeholder="{{checkout.promoPlaceholder}}"
+          />
+          <button id="promo-submit" class="btn-form" type="button">
+            {{checkout.promoApply}}
+          </button>
+        </div>
+      </div>
+      <p id="selected-pickup" class="checkout__selected-pickup">
+        {{checkout.selectPickup}}
+      </p>
+      <button
+        id="form-submit"
+        class="btn-primary checkout__submit"
+        type="submit"
+        disabled
+      >
+        {{checkout.submit}}
+      </button>
+    </div>
+  </form>
+</section>

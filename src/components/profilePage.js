@@ -16,7 +16,7 @@ export const initProfilePage = async () => {
 
   const adminBtn = document.getElementById("profile-admin");
   if (user.admin) {
-    adminBtn.style.display = "block";
+    adminBtn.hidden = false;
   }
 
   document
