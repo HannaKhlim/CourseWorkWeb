@@ -1285,6 +1285,7 @@ main {
     right: 10%;
     width: 60%;
     padding: 32px;
+    height: fit-content;
 
     @media (max-width: $mobile-max-width) {
       position: relative;
