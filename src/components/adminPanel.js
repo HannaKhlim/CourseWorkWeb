@@ -81,7 +81,7 @@ const endpointHTML = (def) => `
       <span class="endpoint__summary">${def.summary}</span>
     </div>
     <div class="endpoint__body" hidden>
-      ${def.fields.includes("id") ? `<label class="endpoint__label">ID</label><input class="endpoint__input" placeholder="e.g. 1000" data-field="id" />` : ""}
+      ${def.fields.includes("id") ? `<label class="endpoint__label">ID</label><input class="input" placeholder="e.g. 1000" data-field="id" />` : ""}
       ${def.fields.includes("body") ? `<label class="endpoint__label">Request Body (JSON)</label><textarea class="endpoint__textarea" rows="12" data-field="body"></textarea>` : ""}
       <button class="endpoint__execute btn-primary">Execute</button>
       <pre class="endpoint__response-body" hidden></pre>

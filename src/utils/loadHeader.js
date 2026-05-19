@@ -89,32 +89,27 @@ const initHeader = () => {
   initializeHeaderHandlers();
   initializeDefaultSelections();
   initSearchHandlers();
+
   document
     .getElementById("lang-toggle")
     .addEventListener("click", toggleLanguage);
-
   document.documentElement.setAttribute("data-theme", getSelectedTheme());
-
   document.getElementById("theme-toggle").addEventListener("click", () => {
     const next = getSelectedTheme() === "dark" ? "light" : "dark";
     selectTheme(next);
     document.documentElement.setAttribute("data-theme", next);
   });
-
   document
     .getElementById("clear-storage")
     .addEventListener("click", clearStorage);
-
   document
     .getElementById("overlay-clear-storage")
     .addEventListener("click", clearStorage);
-
   document
     .querySelector(".header-bottom-mobile__menu")
     .addEventListener("click", () => {
       document.getElementById("mobile-menu-overlay").classList.add("open");
     });
-
   document.getElementById("mobile-menu-close").addEventListener("click", () => {
     document.getElementById("mobile-menu-overlay").classList.remove("open");
   });
