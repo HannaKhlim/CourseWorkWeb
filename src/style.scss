@@ -1719,6 +1719,7 @@ main {
         gap: 8px;
         font-size: 1.5rem;
         font-weight: 500;
+        word-break: break-word;
 
         @media (max-width: $mobile-max-width) {
           font-size: 1rem;
