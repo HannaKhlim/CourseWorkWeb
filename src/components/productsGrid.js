@@ -7,7 +7,7 @@ import { productsApi } from "../utils/api.js";
 import { getCurrentLang } from "../utils/i18n.js";
 import { debounce } from "../utils/timers.js";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 8;
 
 const SORT_PARAMS = {
   newest: "-createdAt",
