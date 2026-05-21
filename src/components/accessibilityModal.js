@@ -97,16 +97,7 @@ const saveSettings = (patch) => {
   applyAccessibilitySettings();
 };
 
-const openModal = () => {
-  syncControlsToSettings();
-  document.querySelector(".accessibility-modal").classList.add("open");
-};
-
-const closeModal = () => {
-  document.querySelector(".accessibility-modal").classList.remove("open");
-};
-
-const initModalHandlers = () => {
+const initA11yModal = () => {
   document.getElementById("a11y-font-size").addEventListener("change", (e) => {
     if (e.target.name === "a11y-font")
       saveSettings({ fontSize: e.target.value });
@@ -124,13 +115,13 @@ const initModalHandlers = () => {
     });
   document
     .getElementById("accessibility-close")
-    .addEventListener("click", closeModal);
+    .addEventListener("click", closeA11yModal);
   document
     .getElementById("accessibility-close-btn")
-    .addEventListener("click", closeModal);
+    .addEventListener("click", closeA11yModal);
   document
     .querySelector(".accessibility-modal__backdrop")
-    .addEventListener("click", closeModal);
+    .addEventListener("click", closeA11yModal);
   document
     .getElementById("accessibility-reset")
     .addEventListener("click", () => {
@@ -140,11 +131,13 @@ const initModalHandlers = () => {
     });
 };
 
-export const initAccessibilityModal = () => {
-  document
-    .getElementById("accessibility-settings")
-    .addEventListener("click", openModal);
-  initModalHandlers();
+export const openA11yModal = () => {
+  syncControlsToSettings();
+  document.querySelector(".accessibility-modal").classList.add("open");
+};
+
+export const closeA11yModal = () => {
+  document.querySelector(".accessibility-modal").classList.remove("open");
 };
 
 fetch("/src/components/accessibilityModal.html")
@@ -154,9 +147,9 @@ fetch("/src/components/accessibilityModal.html")
     registerTemplate("accessibility-modal-container", html);
     container.innerHTML = translate(html);
     applyAccessibilitySettings();
-    initAccessibilityModal();
+    initA11yModal();
     document.addEventListener("i18n:applied", () => {
-      initAccessibilityModal();
+      initA11yModal();
     });
   })
   .catch((err) => console.error("Error loading accessibility modal:", err));

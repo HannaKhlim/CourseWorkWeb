@@ -9,6 +9,7 @@ import {
 } from "./storageService.js";
 import { registerTemplate, translate, toggleLanguage } from "./i18n.js";
 import { navigateTo } from "../router.js";
+import { openA11yModal } from "../components/accessibilityModal.js";
 
 const getRadios = (form) => form.querySelectorAll('input[type="radio"]');
 
@@ -113,6 +114,9 @@ const initHeader = () => {
   document.getElementById("mobile-menu-close").addEventListener("click", () => {
     document.getElementById("mobile-menu-overlay").classList.remove("open");
   });
+  document
+    .getElementById("accessibility-settings")
+    .addEventListener("click", openA11yModal);
 };
 
 fetch("/src/components/header.html")
