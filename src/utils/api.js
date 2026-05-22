@@ -1,4 +1,5 @@
 import { sleep } from "./timers.js";
+import { showToast } from "./toast.js";
 
 const BASE_URL = "/api";
 const loader = document.getElementById("loader");
@@ -6,15 +7,23 @@ const loader = document.getElementById("loader");
 const request = async (path, options = {}) => {
   try {
     loader.classList.add("visible");
+
     await sleep(500);
     const response = await fetch(`${BASE_URL}${path}`, {
       headers: { "Content-Type": "application/json" },
       ...options,
     });
-    if (!response.ok) throw new Error(`API error: ${response.status} ${path}`);
+
+    if (
+      !response.ok ||
+      response.headers.get("Content-Type") !== "application/json"
+    ) {
+      throw new Error(`API error: ${response.status} ${path}`);
+    }
+
     return response.json();
   } catch (error) {
-    console.error(error);
+    showToast(error.message);
     throw error;
   } finally {
     loader.classList.remove("visible");

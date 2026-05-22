@@ -15,5 +15,5 @@ export const showToast = (message) => {
   hideTimeout = setTimeout(() => {
     toastEl.classList.remove("visible");
     hideTimeout = null;
-  }, 2000);
+  }, 3000);
 };

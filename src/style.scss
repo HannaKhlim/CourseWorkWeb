@@ -266,6 +266,9 @@ main {
   white-space: nowrap;
   z-index: 1000;
   opacity: 0;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &.visible {
     opacity: 1;
