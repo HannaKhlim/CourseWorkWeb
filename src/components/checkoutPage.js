@@ -42,6 +42,7 @@ const initMap = (selectedPickupRef, submitBtn) => {
   const mapContainer = document.getElementById("map");
   if (typeof ymaps3 === "undefined") {
     mapContainer.textContent = "Yandex Maps failed to load.";
+    submitBtn.disabled = false;
     return;
   }
 
