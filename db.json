@@ -1099,21 +1099,8 @@
       "passwordHash": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
       "createdAt": 1779109619719,
       "admin": true,
-      "wishlist": ["1010", "1012", "1011"],
-      "cart": [
-        {
-          "productId": "1020",
-          "quantity": 1
-        },
-        {
-          "productId": "1009",
-          "quantity": 1
-        },
-        {
-          "productId": "1011",
-          "quantity": 3
-        }
-      ]
+      "wishlist": ["1010", "1012", "1011", "1017"],
+      "cart": []
     },
     {
       "id": "Y8L1spiVMrg",
@@ -1183,6 +1170,41 @@
       "status": "pending",
       "createdAt": 1779204539005,
       "id": "JkYGCgRjBN4"
+    },
+    {
+      "userId": "1",
+      "items": [
+        {
+          "productId": "1017",
+          "quantity": 2
+        },
+        {
+          "productId": "1010",
+          "quantity": 1
+        },
+        {
+          "productId": "1020",
+          "quantity": 1
+        },
+        {
+          "productId": "1009",
+          "quantity": 1
+        },
+        {
+          "productId": "1011",
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 40620,
+      "discountAmount": 0,
+      "finalPrice": 40620,
+      "pickupPoint": {
+        "city": "minsk",
+        "coordinates": [27.5615, 53.9045]
+      },
+      "status": "pending",
+      "createdAt": 1779210115353,
+      "id": "BZA1MmI37HI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
