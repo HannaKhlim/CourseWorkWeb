@@ -1,4 +1,8 @@
-import { selectGender, getUserData } from "./utils/storageService.js";
+import {
+  selectGender,
+  getUserData,
+  setUserData,
+} from "./utils/storageService.js";
 import { registerTemplate, translate } from "./utils/i18n.js";
 import { initHomePage } from "./components/homePage.js";
 import { initProductsPage } from "./components/productsGrid.js";
@@ -63,6 +67,35 @@ export const navigateTo = (route) => {
 };
 
 const route = async () => {
+  setUserData({
+    id: "1",
+    name: "Hanna",
+    surname: "Khlimonkova",
+    middleName: "Sergeevna",
+    nickname: "xannaq",
+    email: "xannaq@xena.dev",
+    phone: "+375297777777",
+    dateOfBirth: "2006-09-12",
+    passwordHash:
+      "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
+    createdAt: 1779109619719,
+    admin: true,
+    wishlist: ["1010", "1012", "1011"],
+    cart: [
+      {
+        productId: "1020",
+        quantity: 1,
+      },
+      {
+        productId: "1009",
+        quantity: 1,
+      },
+      {
+        productId: "1011",
+        quantity: 3,
+      },
+    ],
+  });
   const path = window.location.pathname;
   const searchParams = new URLSearchParams(window.location.search);
   if (searchParams.has("gender")) {
