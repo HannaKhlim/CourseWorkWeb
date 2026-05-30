@@ -8,7 +8,7 @@ const request = async (path, options = {}) => {
   try {
     loader.classList.add("visible");
 
-    await sleep(500);
+    await sleep(200);
     const response = await fetch(`${BASE_URL}${path}`, {
       headers: { "Content-Type": "application/json" },
       ...options,
